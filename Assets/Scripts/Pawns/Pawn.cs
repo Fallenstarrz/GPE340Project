@@ -2,23 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pawn : MonoBehaviour
+public abstract class Pawn : MonoBehaviour
 {
+    [HideInInspector]
     public Animator anim;
+    [HideInInspector]
+    public Transform tf;
 
     // Use this for initialization
-    void Start ()
+    protected virtual void Start ()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
+        anim = GetComponent<Animator>();
+        tf = GetComponent<Transform>();
 	}
 
-    public virtual void move(float forwardMovement, float backwardMovement)
+    public virtual void move(Vector3 moveVector)
+    {
+
+    }
+
+    public virtual void rotate(Vector3 rotationTarget)
+    {
+
+    }
+
+    public virtual void sprint(bool sprinting)
+    {
+
+    }
+
+    public virtual void crouch(bool crouching)
     {
 
     }
