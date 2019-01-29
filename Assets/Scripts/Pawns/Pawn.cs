@@ -8,6 +8,8 @@ public abstract class Pawn : MonoBehaviour
     public Animator anim;
     [HideInInspector]
     public Transform tf;
+    [SerializeField]
+    protected float checkGroundDistance;
 
     // Use this for initialization
     protected virtual void Start ()
@@ -34,5 +36,24 @@ public abstract class Pawn : MonoBehaviour
     public virtual void crouch(bool crouching)
     {
 
+    }
+
+    public virtual void checkFalling()
+    {
+        RaycastHit hit;
+        float distanceToGround;
+        if (Physics.Raycast(tf.position, -tf.up, out hit))
+        {
+            distanceToGround = hit.distance;
+            anim.SetFloat("distanceToGround", distanceToGround);
+            if (hit.distance > checkGroundDistance)
+            {
+                anim.SetBool("isGrounded", false);
+            }
+            else
+            {
+                anim.SetBool("isGrounded", true);
+            }
+        }
     }
 }

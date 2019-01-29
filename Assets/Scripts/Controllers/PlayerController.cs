@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Pawn pawn;
+    [SerializeField]
+    private Pawn pawn;
 
 	// Use this for initialization
 	void Start ()

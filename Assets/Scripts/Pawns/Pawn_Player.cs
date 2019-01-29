@@ -13,7 +13,7 @@ public class Pawn_Player : Pawn
 	// Update is called once per frame
 	void Update ()
     {
-
+        checkFalling();
 	}
 
     public override void move(Vector3 moveVector)
@@ -54,5 +54,10 @@ public class Pawn_Player : Pawn
     {
         Vector2 newVector = new Vector2(vectorToUse.x, vectorToUse.z);
         return newVector.magnitude;
+    }
+
+    public override void checkFalling()
+    {
+        base.checkFalling();
     }
 }

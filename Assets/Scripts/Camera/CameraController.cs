@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Vector3 offset;
-    public Transform targetTF;
+    [SerializeField]
+    private Vector3 offset;
+    [SerializeField]
+    private Transform targetTF;
     private Transform tf;
     [Range(0.0f, 1.0f)]
-    public float smoothRate;
+    [SerializeField]
+    private float smoothRate;
 
 	// Use this for initialization
 	void Start ()
