@@ -46,7 +46,7 @@ public abstract class Pawn : MonoBehaviour
         {
             distanceToGround = hit.distance;
             anim.SetFloat("distanceToGround", distanceToGround);
-            if (hit.distance > checkGroundDistance)
+            if (hit.distance >= checkGroundDistance)
             {
                 anim.SetBool("isGrounded", false);
             }
