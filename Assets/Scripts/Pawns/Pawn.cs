@@ -8,6 +8,8 @@ public abstract class Pawn : MonoBehaviour
     public Animator anim;
     [HideInInspector]
     public Transform tf;
+    [Header ("Falling Settings")]
+    [Range (1f,10f)]
     [SerializeField]
     protected float checkGroundDistance;
 

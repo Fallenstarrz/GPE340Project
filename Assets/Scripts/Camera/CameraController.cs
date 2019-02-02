@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [Header ("Camera Movement")]
+    [Range(0.0f, 1.0f)]
+    [SerializeField]
+    private float smoothRate;
     [SerializeField]
     private Vector3 offset;
     [SerializeField]
     private Transform targetTF;
     private Transform tf;
-    [Range(0.0f, 1.0f)]
-    [SerializeField]
-    private float smoothRate;
 
 	// Use this for initialization
 	void Start ()
@@ -24,7 +25,9 @@ public class CameraController : MonoBehaviour
     {
         moveCamera();
 	}
-
+    /// <summary>
+    /// Set camera position to target's position plus an offset and lerp between those two positions.
+    /// </summary>
     void moveCamera()
     {
         Vector3 newPosition = targetTF.position + offset;
