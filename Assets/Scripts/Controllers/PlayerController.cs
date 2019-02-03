@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void rotationHandler()
     {
         // Need some work done here
-        pawn.rotate(Input.mousePosition);
+        pawn.rotateTowards(Input.mousePosition);
     }
     /// <summary>
     /// Tell the pawn to toggle on the movement animations in order to enable sprinting

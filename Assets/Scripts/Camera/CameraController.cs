@@ -7,10 +7,13 @@ public class CameraController : MonoBehaviour
     [Header ("Camera Movement")]
     [Range(0.0f, 1.0f)]
     [SerializeField]
+    [Tooltip("Rate at which the camera moves towards desired position")]
     private float smoothRate;
     [SerializeField]
+    [Tooltip("Position away from the target that the camera will try stay at")]
     private Vector3 offset;
     [SerializeField]
+    [Tooltip("Target the camera will follow")]
     private Transform targetTF;
     private Transform tf;
 

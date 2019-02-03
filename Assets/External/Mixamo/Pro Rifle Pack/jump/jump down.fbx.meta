@@ -173,7 +173,7 @@ ModelImporter:
       name: JumpDown
       takeName: mixamo.com
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 11
       wrapMode: 0
       orientationOffsetY: 55
       level: 0
