@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
         rotationHandler();
         sprintHandler();
         crouchHandler();
+        switchWeapons();
 	}
 
     /// <summary>
@@ -68,6 +69,81 @@ public class PlayerController : MonoBehaviour
         else
         {
             pawn.crouch(false);
+        }
+    }
+
+    void shootHandler()
+    {
+        if (Input.GetButton("Fire1"))
+        {
+            pawn.stats.weaponEquipped.Shoot();
+        }
+    }
+
+    void switchWeapons()
+    {
+        if (Input.GetButtonDown("WeaponSelectScroll"))
+        {
+
+        }
+        if (Input.GetButtonDown("WeaponSlot1"))
+        {
+            if (pawn.stats.inventory[0] != null)
+            {
+                pawn.equipWeapon(pawn.stats.inventory[0]);
+            }
+            else
+            {
+                Debug.Log("No weapon that slot");
+            }
+        }
+        if (Input.GetButtonDown("WeaponSlot2"))
+        {
+            if (pawn.stats.inventory[1] != null)
+            {
+                pawn.equipWeapon(pawn.stats.inventory[1]);
+            }
+            else
+            {
+                Debug.Log("No weapon that slot");
+            }
+        }
+        if (Input.GetButtonDown("WeaponSlot3"))
+        {
+            if (pawn.stats.inventory[2] != null)
+            {
+                pawn.equipWeapon(pawn.stats.inventory[2]);
+            }
+            else
+            {
+                Debug.Log("No weapon that slot");
+            }
+        }
+        if (Input.GetButtonDown("WeaponSlot4"))
+        {
+            if (pawn.stats.inventory[3] != null)
+            {
+                pawn.equipWeapon(pawn.stats.inventory[3]);
+            }
+            else
+            {
+                Debug.Log("No weapon that slot");
+            }
+        }
+        if (Input.GetButtonDown("WeaponSlot5"))
+        {
+            if (pawn.stats.inventory[4] != null)
+            {
+                pawn.equipWeapon(pawn.stats.inventory[4]);
+            }
+            else
+            {
+                Debug.Log("No weapon that slot");
+            }
+        }
+        if (Input.GetButtonDown("UnequipAll"))
+        {
+            pawn.unequipWeapon(pawn.stats.weaponEquipped);
         }
     }
 }

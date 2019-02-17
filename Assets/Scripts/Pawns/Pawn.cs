@@ -8,6 +8,15 @@ public abstract class Pawn : MonoBehaviour
     public Animator anim;
     [HideInInspector]
     public Transform tf;
+    [HideInInspector]
+    public Stats stats;
+
+    [Header("Sockets")]
+    public Transform weaponSocket;
+    [HideInInspector]
+    public Transform rightHandPoint;
+    [HideInInspector]
+    public Transform leftHandPoint;
 
     [Header ("Falling Settings")]
     [Range (0f,10f)]
@@ -46,11 +55,15 @@ public abstract class Pawn : MonoBehaviour
         anim = GetComponent<Animator>();
         tf = GetComponent<Transform>();
         charCollider = GetComponent<CapsuleCollider>();
+        stats = GetComponent<Stats>();
+
+        equipWeapon(stats.inventory[0]);
 	}
 
     public virtual void Update()
     {
-        checkFalling();    }
+        checkFalling();
+    }
 
     /// <summary>
     /// Pawn object parent class.
@@ -136,6 +149,72 @@ public abstract class Pawn : MonoBehaviour
             {
                 anim.SetBool("isGrounded", true);
             }
+        }
+    }
+
+    public virtual void equipWeapon(Weapon weapon)
+    {
+        if (stats.weaponEquipped != weapon)
+        {
+            if (stats.weaponEquipped != null)
+            {
+                unequipWeapon(stats.weaponEquipped);
+            }
+            stats.weaponEquipped = Instantiate(weapon);
+        }
+        stats.weaponEquipped.transform.SetParent(weaponSocket);
+        stats.weaponEquipped.transform.localPosition = weapon.transform.localPosition;
+        stats.weaponEquipped.transform.localRotation = weapon.transform.localRotation;
+        stats.weaponEquipped.currentWeaponType = weapon.currentWeaponType;
+        setAnimLayer();
+        if (stats.weaponEquipped != null)
+        {
+            rightHandPoint = stats.weaponEquipped.rightHandPoint;
+            leftHandPoint = stats.weaponEquipped.leftHandPoint;
+        }
+    }
+
+    public void die()
+    {
+
+    }
+
+    public virtual void unequipWeapon(Weapon weapon)
+    {
+        Destroy(weapon.gameObject);
+        stats.weaponEquipped = null;
+    }
+
+    void setAnimLayer()
+    {
+        anim.SetInteger("WeaponLayerIndex", (int)(stats.weaponEquipped.currentWeaponType));
+    }
+
+    private void OnAnimatorIK(int layerIndex)
+    {
+        if (rightHandPoint == null)
+        {
+            anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 0.0f);
+            anim.SetIKRotationWeight(AvatarIKGoal.RightHand, 0.0f);
+        }
+        else
+        {
+            anim.SetIKPosition(AvatarIKGoal.RightHand, rightHandPoint.position);
+            anim.SetIKRotation(AvatarIKGoal.RightHand, rightHandPoint.rotation);
+            anim.SetIKPositionWeight(AvatarIKGoal.RightHand, 1.0f);
+            anim.SetIKRotationWeight(AvatarIKGoal.RightHand, 1.0f);
+        }
+        if (leftHandPoint == null)
+        {
+            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 0.0f);
+            anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 0.0f);
+        }
+        else
+        {
+            anim.SetIKPosition(AvatarIKGoal.LeftHand, leftHandPoint.position);
+            anim.SetIKRotation(AvatarIKGoal.LeftHand, leftHandPoint.rotation);
+            anim.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1.0f);
+            anim.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1.0f);
         }
     }
 }
