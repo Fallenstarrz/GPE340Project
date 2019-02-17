@@ -45,7 +45,19 @@ public class Pawn_Player : Pawn
     /// <param name="sprinting">Boolean to check if the player is sprinting</param>
     public override void sprint(bool sprinting)
     {
-        anim.SetBool("isSprinting", sprinting);
+        if (sprinting == true)
+        {
+            if (stats.staminaCurrent >= 0)
+            {
+                stats.staminaCurrent -= stats.staminaDrainSprinting * Time.deltaTime;
+                stats.staminaRegenDelayCurrent = stats.staminaRegenDelayMax;
+                anim.SetBool("isSprinting", sprinting);
+            }
+            else
+            {
+                anim.SetBool("isSprinting", false);
+            }
+        }
         base.sprint(sprinting);
     }
 

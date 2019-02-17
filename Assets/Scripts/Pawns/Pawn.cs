@@ -152,6 +152,12 @@ public abstract class Pawn : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Equip the parameter
+    /// if we have a weapon already equip, unequip it
+    /// then set up IK positions for the new weapon
+    /// </summary>
+    /// <param name="weapon">Weapon to equip</param>
     public virtual void equipWeapon(Weapon weapon)
     {
         if (stats.weaponEquipped != weapon)
@@ -175,6 +181,9 @@ public abstract class Pawn : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Destroy pawn gameObject when this function is called
+    /// </summary>
     public void die()
     {
         Destroy(gameObject);
@@ -184,17 +193,29 @@ public abstract class Pawn : MonoBehaviour
         // Trigger Respawn
     }
 
+    /// <summary>
+    /// remove currently equipped weapon
+    /// then remove the reference to it in stats
+    /// </summary>
+    /// <param name="weapon"></param>
     public virtual void unequipWeapon(Weapon weapon)
     {
         Destroy(weapon.gameObject);
         stats.weaponEquipped = null;
     }
 
+    /// <summary>
+    ///  swap animation layers according to weapon type
+    /// </summary>
     void setAnimLayer()
     {
         anim.SetInteger("WeaponLayerIndex", (int)(stats.weaponEquipped.currentWeaponType));
     }
 
+    /// <summary>
+    /// Set IK positions
+    /// </summary>
+    /// <param name="layerIndex"></param>
     private void OnAnimatorIK(int layerIndex)
     {
         if (rightHandPoint == null)

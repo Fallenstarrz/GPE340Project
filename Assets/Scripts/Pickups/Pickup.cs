@@ -23,11 +23,19 @@ public abstract class Pickup : MonoBehaviour
         spin();
 	}
 
+    /// <summary>
+    /// Spin the object about the Y axis by rotationSpeed * time since last frame
+    /// </summary>
     void spin()
     {
         tf.Rotate(0, rotationSpeed * Time.deltaTime, 0);
     }
 
+    /// <summary>
+    /// When a collider with the stats component collides with this pickup
+    /// run the onPickup function for the children
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Stats>() != null)
@@ -36,6 +44,10 @@ public abstract class Pickup : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Destroy the pickup, so another one can spawn
+    /// </summary>
+    /// <param name="instigator">object that entered the trigger</param>
     protected virtual void onPickup(GameObject instigator)
     {
         Destroy(this.gameObject);

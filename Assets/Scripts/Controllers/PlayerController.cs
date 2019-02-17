@@ -73,6 +73,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Tell pawn's current weapon to shoot
+    /// </summary>
     void shootHandler()
     {
         if (Input.GetButton("Shoot"))
@@ -81,6 +84,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Tell pawn to switch weapons in Inventory
     void switchWeapons()
     {
         if (Input.GetButtonDown("WeaponSelectScroll"))

@@ -275,10 +275,11 @@ MonoBehaviour:
   shootCooldownCurrent: 0
   shootCooldownMax: 0.1
   damage: 5
-  bulletSpread: 0
+  bulletSpread: 4
   bulletSpeed: 50
   stopOnCollision: 1
   explosionRadius: 0
+  explosionForce: 0
   projectileLifespan: 3
   bulletPrefab: {fileID: 114238328231796184, guid: 332084d25ef035d439eb2c271ed9eca1,
     type: 2}

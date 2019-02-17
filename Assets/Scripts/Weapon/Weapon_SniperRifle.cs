@@ -11,6 +11,13 @@ public class Weapon_SniperRifle : Weapon
         currentWeaponType = weaponType.sniperRifle;
     }
 
+    /// <summary>
+    /// Shoot sniper bullet
+    /// reduce sniper ammo by 1
+    /// if we don't have enough ammo or cooldown isn't up
+    /// then we don't shoot
+    /// </summary>
+    /// <param name="stats"></param>
     public override void Shoot(Stats stats)
     {
         if (shootCooldownCurrent <= 0)
@@ -28,6 +35,10 @@ public class Weapon_SniperRifle : Weapon
         }
     }
 
+    /// <summary>
+    /// Add sniper Ammo
+    /// </summary>
+    /// <param name="stats"></param>
     public override void addAmmo(Stats stats)
     {
         if ((stats.sniperAmmoCurrent + ammoToAdd) >= stats.sniperAmmoMax)

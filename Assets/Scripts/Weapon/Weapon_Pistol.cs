@@ -11,6 +11,12 @@ public class Weapon_Pistol : Weapon
         currentWeaponType = weaponType.pistol;
     }
 
+    /// <summary>
+    /// Shoot pistol
+    /// if we don't have enough ammo or our cooldown isn't up then don't shoot
+    /// otherwise reduce ammo by 1, reset the cooldown and shoot
+    /// </summary>
+    /// <param name="stats"></param>
     public override void Shoot(Stats stats)
     {
         if (shootCooldownCurrent <= 0)
@@ -28,6 +34,10 @@ public class Weapon_Pistol : Weapon
         }
     }
 
+    /// <summary>
+    /// Add Pistol ammo
+    /// </summary>
+    /// <param name="stats"></param>
     public override void addAmmo(Stats stats)
     {
         if ((stats.pistolAmmoCurrent + ammoToAdd) >= stats.pistolAmmoMax)

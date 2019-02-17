@@ -10,6 +10,12 @@ public class Weapon_RocketLauncher : Weapon
         currentWeaponType = weaponType.rocketLauncher;
     }
 
+    /// <summary>
+    /// Shoot rocket launcher
+    /// if we don't have enough ammo or our cooldown isn't up then don't shoot
+    /// otherwise reduce ammo by 1, reset the cooldown and shoot
+    /// </summary>
+    /// <param name="stats"></param>
     public override void Shoot(Stats stats)
     {
         if (shootCooldownCurrent <= 0)
@@ -27,6 +33,10 @@ public class Weapon_RocketLauncher : Weapon
         }
     }
 
+    /// <summary>
+    /// Add rocket launcher ammo
+    /// </summary>
+    /// <param name="stats"></param>
     public override void addAmmo(Stats stats)
     {
         if ((stats.RocketLauncherAmmoCurrent + ammoToAdd) >= stats.RocketLauncherAmmoMax)

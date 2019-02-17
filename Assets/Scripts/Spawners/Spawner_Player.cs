@@ -6,6 +6,9 @@ public class Spawner_Player : Spawner
 {
     public GameObject player;
 
+    /// <summary>
+    ///  pick the player as the next object to spawn
+    /// </summary>
     protected override void pickObjectToSpawn()
     {
         objectToSpawn = player;

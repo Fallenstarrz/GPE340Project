@@ -20,6 +20,7 @@ public class Stats : MonoBehaviour
     public float staminaRegenDelayCurrent;
     public float staminaRegenDelayMax;
     public Image staminaRegenFill;
+    public float staminaDrainSprinting;
 
     [Header("Shields")]
     public float shieldMax;
@@ -55,9 +56,10 @@ public class Stats : MonoBehaviour
     public Weapon startingWeapon;
     public Weapon weaponEquipped;
     public Weapon[] inventory = new Weapon[5];
-
-    [Header("Buffs")]
-    public List<Pickup> buffs = new List<Pickup>();
+    
+    // TODO: Buffs: NYI, WIP. Milestone 4 goal
+    //[Header("Buffs")]
+    //public List<Pickup> buffs = new List<Pickup>();
 
     // Set default stats on spawned
     void Awake ()
@@ -90,6 +92,9 @@ public class Stats : MonoBehaviour
         shieldUIRegenUpdate();
     }
 
+    /// <summary>
+    /// Regenerate stamina by rate * Time.deltaTime
+    /// </summary>
     void regenStamina()
     {
         if (staminaRegenDelayCurrent >= 0)
@@ -113,6 +118,10 @@ public class Stats : MonoBehaviour
             }
         }
     }
+
+    /// <summary>
+    /// Regenerate shields by rate * Time.deltaTime
+    /// </summary>
     void regenShields()
     {
         if (shieldRegenDelayCurrent >= 0)
@@ -137,6 +146,11 @@ public class Stats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Reduce health or shield by damageToTake parameter
+    /// If our health is less than or equal to 0 then kill the pawn
+    /// </summary>
+    /// <param name="damageToTake">Damage passed in by the projectile we were hit by</param>
     public void takeDamage(float damageToTake)
     {
         if (shieldCurrent <= 0)

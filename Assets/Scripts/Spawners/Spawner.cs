@@ -13,6 +13,11 @@ public class Spawner : MonoBehaviour
     public bool spawnAtStart;
 
 	// Use this for initialization
+    /// <summary>
+    /// If we want to spawn at start set currentSpawnTime to 0
+    /// otherwise set it to max spawn time
+    /// then pick the next object to spawn
+    /// </summary>
     void Start ()
     {
         tf = GetComponent<Transform>();
@@ -28,6 +33,11 @@ public class Spawner : MonoBehaviour
     }
 	
 	// Update is called once per frame
+    /// <summary>
+    /// if there is no object currently spawned reduce spawn time current, so we can start spawning after a delay
+    /// if there is no object spawned and our delay is 0 then spawn a new one
+    /// finally pick the next object to spawn
+    /// </summary>
 	void Update ()
     {
         if (spawnedObject == null)
@@ -49,6 +59,10 @@ public class Spawner : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Pick the next object to spawn
+    /// Chosen in children
+    /// </summary>
     protected virtual void pickObjectToSpawn()
     {
 

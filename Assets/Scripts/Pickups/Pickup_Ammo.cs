@@ -14,6 +14,12 @@ public class Pickup_Ammo : Pickup
         sniperRifle
     }
     public ammoType typeOfAmmo;
+
+    /// <summary>
+    /// set a reference to instigator stats
+    /// then add the proper ammo type
+    /// </summary>
+    /// <param name="instigator">actor who entered trigger</param>
     protected override void onPickup(GameObject instigator)
     {
         Stats instigatorStats = instigator.GetComponent<Stats>();
@@ -21,6 +27,10 @@ public class Pickup_Ammo : Pickup
         base.onPickup(instigator);
     }
 
+    /// <summary>
+    /// Switch on the amount type
+    /// </summary>
+    /// <param name="stats">stats of the instigator, which is the actor who entered the trigger</param>
     protected void addAmmo(Stats stats)
     {
         switch (typeOfAmmo)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AIController : MonoBehaviour
 {
-    
+    //Stub class for finite state machine for the AI behavior in the next milestone
 	// Use this for initialization
 	void Start ()
     {

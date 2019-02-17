@@ -2116,7 +2116,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000697963815194}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -2163,6 +2163,7 @@ MonoBehaviour:
   staminaRegenDelayCurrent: 0
   staminaRegenDelayMax: 3
   staminaRegenFill: {fileID: 0}
+  staminaDrainSprinting: 0
   shieldMax: 50
   shieldCurrent: 0
   shieldFill: {fileID: 0}

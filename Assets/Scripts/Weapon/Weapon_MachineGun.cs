@@ -11,6 +11,12 @@ public class Weapon_MachineGun : Weapon
         currentWeaponType = weaponType.machineGun;
     }
 
+    /// <summary>
+    /// Shoot machine gun
+    /// if we don't have enough ammo or our cooldown isn't up then don't shoot
+    /// otherwise reduce ammo by 1, reset the cooldown and shoot
+    /// </summary>
+    /// <param name="stats"></param>
     public override void Shoot(Stats stats)
     {
         if (shootCooldownCurrent <= 0)
@@ -28,6 +34,10 @@ public class Weapon_MachineGun : Weapon
         }
     }
 
+    /// <summary>
+    /// Add machine gun ammo
+    /// </summary>
+    /// <param name="stats"></param>
     public override void addAmmo(Stats stats)
     {
         if ((stats.machineGunAmmoCurrent + ammoToAdd) >= stats.machineGunAmmoMax)

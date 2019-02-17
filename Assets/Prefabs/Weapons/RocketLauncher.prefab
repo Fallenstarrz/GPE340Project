@@ -206,7 +206,8 @@ MonoBehaviour:
   bulletSpeed: 50
   stopOnCollision: 1
   explosionRadius: 3
+  explosionForce: 20
   projectileLifespan: 3
-  bulletPrefab: {fileID: 114709191991039124, guid: fc78ec369908ac442ab536c405e17ba0,
+  bulletPrefab: {fileID: 114748225510557852, guid: fc78ec369908ac442ab536c405e17ba0,
     type: 2}
   currentWeaponType: 5

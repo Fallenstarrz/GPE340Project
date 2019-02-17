@@ -6,6 +6,9 @@ public class Spawner_Weapon : Spawner
 {
     public List<GameObject> weaponsList;
 
+    /// <summary>
+    /// pick a random item from the list of weapons to spawn
+    /// </summary>
     protected override void pickObjectToSpawn()
     {
         int randomObject = Random.Range(0, weaponsList.Count);
