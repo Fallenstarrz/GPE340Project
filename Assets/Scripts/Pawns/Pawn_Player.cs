@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class Pawn_Player : Pawn
 {
-	// Use this for initialization
-	public override void Start ()
-    {
-        base.Start();
-	}
-	
-	// Update is called once per frame
-	public override void Update ()
-    {
-        base.Update();
-	}
     /// <summary>
     /// Pawn child class.
     /// Move towards the target. For the player the target is their movement input.

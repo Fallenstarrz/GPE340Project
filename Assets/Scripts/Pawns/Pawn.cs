@@ -50,7 +50,7 @@ public abstract class Pawn : MonoBehaviour
     protected float colliderChangeRate;
 
     // Use this for initialization
-    public virtual void Start ()
+    protected void Start ()
     {
         anim = GetComponent<Animator>();
         tf = GetComponent<Transform>();
@@ -60,7 +60,7 @@ public abstract class Pawn : MonoBehaviour
         equipWeapon(stats.inventory[0]);
 	}
 
-    public virtual void Update()
+    protected void Update()
     {
         checkFalling();
     }
@@ -161,14 +161,13 @@ public abstract class Pawn : MonoBehaviour
                 unequipWeapon(stats.weaponEquipped);
             }
             stats.weaponEquipped = Instantiate(weapon);
-        }
-        stats.weaponEquipped.transform.SetParent(weaponSocket);
-        stats.weaponEquipped.transform.localPosition = weapon.transform.localPosition;
-        stats.weaponEquipped.transform.localRotation = weapon.transform.localRotation;
-        stats.weaponEquipped.currentWeaponType = weapon.currentWeaponType;
-        setAnimLayer();
-        if (stats.weaponEquipped != null)
-        {
+
+            stats.weaponEquipped.transform.SetParent(weaponSocket);
+            stats.weaponEquipped.transform.localPosition = weapon.transform.localPosition;
+            stats.weaponEquipped.transform.localRotation = weapon.transform.localRotation;
+            stats.weaponEquipped.currentWeaponType = weapon.currentWeaponType;
+            setAnimLayer();
+
             rightHandPoint = stats.weaponEquipped.rightHandPoint;
             leftHandPoint = stats.weaponEquipped.leftHandPoint;
         }

@@ -4,10 +4,28 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [Header("IK Information")]
     public Transform rightHandPoint;
     public Transform leftHandPoint;
-    public Transform firePoint;
-    public int ammoToAdd;
+
+    [Header("Ammo Information")]
+    [SerializeField]
+    protected int ammoToAdd;
+
+    [Header("Weapon Stats")]
+    [SerializeField]
+    protected Transform firePoint;
+    [SerializeField]
+    protected float shootCooldownCurrent;
+    [SerializeField]
+    protected float shootCooldownMax;
+    [SerializeField]
+    protected float damage;
+    [SerializeField]
+    protected float bulletSpread;
+
+    [Header("Bullet to Shoot")]
+    public GameObject bulletPrefab;
 
     public enum weaponType
     {

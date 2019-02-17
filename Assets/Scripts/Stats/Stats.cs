@@ -58,7 +58,7 @@ public class Stats : MonoBehaviour
     public List<Pickup> buffs = new List<Pickup>();
 
     // Set default stats on spawned
-    void Start ()
+    void Awake ()
     {
         healthCurrent = healthMax;
         staminaCurrent = staminaMax;
@@ -136,30 +136,45 @@ public class Stats : MonoBehaviour
     // Update health UI
     void healthUIUpdate()
     {
-        healthFill.fillAmount = healthCurrent / healthMax;
+        if (healthFill != null)
+        {
+            healthFill.fillAmount = healthCurrent / healthMax;
+        }
     }
 
     // Update stamina UI
     void staminaUIUpdate()
     {
-        staminaFill.fillAmount = staminaCurrent / staminaMax;
+        if (staminaFill != null)
+        {
+            staminaFill.fillAmount = staminaCurrent / staminaMax;
+        }
     }
 
     // Update shield UI
     void shieldUIUpdate()
     {
-        shieldFill.fillAmount = shieldCurrent / shieldMax;
+        if (shieldFill != null)
+        {
+            shieldFill.fillAmount = shieldCurrent / shieldMax;
+        }
     }
 
     // Update Stamina Regen UI
     void staminaUIRegenUpdate()
     {
-        staminaRegenFill.fillAmount = 1 - (staminaRegenDelayCurrent / shieldRegenDelayMax);
+        if (staminaRegenFill != null)
+        {
+            staminaRegenFill.fillAmount = 1 - (staminaRegenDelayCurrent / shieldRegenDelayMax);
+        }
     }
 
     // Update Shield Regen UI
     void shieldUIRegenUpdate()
     {
-        shieldRegenFill.fillAmount = 1 - (shieldRegenDelayCurrent / shieldRegenDelayMax);
+        if (shieldRegenFill != null)
+        {
+            shieldRegenFill.fillAmount = 1 - (shieldRegenDelayCurrent / shieldRegenDelayMax);
+        }
     }
 }
