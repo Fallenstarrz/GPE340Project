@@ -20,12 +20,20 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected float shootCooldownMax;
     [SerializeField]
-    protected float damage;
+    public float damage;
     [SerializeField]
     protected float bulletSpread;
+    [SerializeField]
+    public float bulletSpeed;
+    [SerializeField]
+    public bool stopOnCollision;
+    [SerializeField]
+    public float explosionRadius;
+    [SerializeField]
+    public float projectileLifespan;
 
     [Header("Bullet to Shoot")]
-    public GameObject bulletPrefab;
+    public Projectile bulletPrefab;
 
     public enum weaponType
     {
@@ -47,12 +55,16 @@ public abstract class Weapon : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-		
+        if (shootCooldownCurrent >= 0)
+        {
+            shootCooldownCurrent -= Time.deltaTime;
+        }
 	}
 
-    public virtual void Shoot()
+    public virtual void Shoot(Stats stats)
     {
-
+        Projectile projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(Random.onUnitSphere * bulletSpread));
+        projectile.weaponThatShot = this;
     }
 
     public virtual void addAmmo(Stats stats)

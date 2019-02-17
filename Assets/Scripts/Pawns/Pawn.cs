@@ -170,12 +170,18 @@ public abstract class Pawn : MonoBehaviour
 
             rightHandPoint = stats.weaponEquipped.rightHandPoint;
             leftHandPoint = stats.weaponEquipped.leftHandPoint;
+
+            stats.weaponEquipped.gameObject.layer = gameObject.layer;
         }
     }
 
     public void die()
     {
-
+        Destroy(gameObject);
+        // Add animation for death
+        // Add effect for death
+        // Add sound for death
+        // Trigger Respawn
     }
 
     public virtual void unequipWeapon(Weapon weapon)

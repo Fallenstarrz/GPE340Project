@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
         sprintHandler();
         crouchHandler();
         switchWeapons();
+        shootHandler();
 	}
 
     /// <summary>
@@ -74,9 +75,9 @@ public class PlayerController : MonoBehaviour
 
     void shootHandler()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Shoot"))
         {
-            pawn.stats.weaponEquipped.Shoot();
+            pawn.stats.weaponEquipped.Shoot(pawn.stats);
         }
     }
 

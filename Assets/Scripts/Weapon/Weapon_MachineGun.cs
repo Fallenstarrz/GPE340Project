@@ -10,17 +10,22 @@ public class Weapon_MachineGun : Weapon
     {
         currentWeaponType = weaponType.machineGun;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public override void Shoot()
+    public override void Shoot(Stats stats)
     {
-
-        base.Shoot();
+        if (shootCooldownCurrent <= 0)
+        {
+            if (stats.machineGunAmmoCurrent > 0)
+            {
+                stats.machineGunAmmoCurrent -= 1;
+                shootCooldownCurrent = shootCooldownMax;
+                base.Shoot(stats);
+            }
+            else
+            {
+                Debug.Log("Out Of Ammo For " + currentWeaponType);
+            }
+        }
     }
 
     public override void addAmmo(Stats stats)

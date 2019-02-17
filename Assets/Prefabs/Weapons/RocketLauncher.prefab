@@ -197,6 +197,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rightHandPoint: {fileID: 4143011601819144}
   leftHandPoint: {fileID: 4186807260859236}
-  firePoint: {fileID: 4963121500950106}
   ammoToAdd: 1
+  firePoint: {fileID: 4963121500950106}
+  shootCooldownCurrent: 0
+  shootCooldownMax: 1.5
+  damage: 50
+  bulletSpread: 1
+  bulletSpeed: 50
+  stopOnCollision: 1
+  explosionRadius: 3
+  projectileLifespan: 3
+  bulletPrefab: {fileID: 114709191991039124, guid: fc78ec369908ac442ab536c405e17ba0,
+    type: 2}
   currentWeaponType: 5

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
+    private Pawn pawn;
+
     [Header("Health")]
     public float healthMax;
     public float healthCurrent;
@@ -60,6 +62,8 @@ public class Stats : MonoBehaviour
     // Set default stats on spawned
     void Awake ()
     {
+        pawn = GetComponent<Pawn>();
+
         healthCurrent = healthMax;
         staminaCurrent = staminaMax;
         shieldCurrent = shieldMax;
@@ -130,6 +134,23 @@ public class Stats : MonoBehaviour
             {
                 shieldCurrent += shieldRegenRate * Time.deltaTime;
             }
+        }
+    }
+
+    public void takeDamage(float damageToTake)
+    {
+        if (shieldCurrent <= 0)
+        {
+            healthCurrent -= damageToTake;
+            if (healthCurrent <= 0)
+            {
+                pawn.die();
+            }
+        }
+        else
+        {
+            shieldCurrent -= damageToTake;
+            shieldRegenDelayCurrent = shieldRegenDelayMax;
         }
     }
 

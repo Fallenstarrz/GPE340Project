@@ -10,17 +10,22 @@ public class Weapon_AssaultRifle : Weapon
     {
         currentWeaponType = weaponType.assaultRifle;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public override void Shoot()
+    public override void Shoot(Stats stats)
     {
-
-        base.Shoot();
+        if (shootCooldownCurrent <= 0)
+        {
+            if (stats.rifleAmmoCurrent > 0)
+            {
+                stats.rifleAmmoCurrent -= 1;
+                shootCooldownCurrent = shootCooldownMax;
+                base.Shoot(stats);
+            }
+            else
+            {
+                Debug.Log("Out Of Ammo For " + currentWeaponType);
+            }
+        }
     }
 
     public override void addAmmo(Stats stats)

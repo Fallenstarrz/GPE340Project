@@ -4,23 +4,27 @@ using UnityEngine;
 
 public class Weapon_RocketLauncher : Weapon
 {
-
 	// Use this for initialization
 	void Start ()
     {
         currentWeaponType = weaponType.rocketLauncher;
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public override void Shoot()
+    public override void Shoot(Stats stats)
     {
-
-        base.Shoot();
+        if (shootCooldownCurrent <= 0)
+        {
+            if (stats.RocketLauncherAmmoCurrent > 0)
+            {
+                stats.RocketLauncherAmmoCurrent -= 1;
+                shootCooldownCurrent = shootCooldownMax;
+                base.Shoot(stats);
+            }
+            else
+            {
+                Debug.Log("Out Of Ammo For " + currentWeaponType);
+            }
+        }
     }
 
     public override void addAmmo(Stats stats)
