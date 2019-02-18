@@ -12,9 +12,6 @@ public class Pawn_Player : Pawn
     /// <param name="moveVector"></param>
     public override void move(Vector3 moveVector)
     {
-        anim.SetFloat("Vertical", moveVector.z);
-        anim.SetFloat("Horizontal", moveVector.x);
-        anim.SetFloat("Speed", makeSpeed(moveVector));
         base.move(moveVector);
     }
 
@@ -58,6 +55,10 @@ public class Pawn_Player : Pawn
                 anim.SetBool("isSprinting", false);
             }
         }
+        else
+        {
+            anim.SetBool("isSprinting", false);
+        }
         base.sprint(sprinting);
     }
 
@@ -73,22 +74,28 @@ public class Pawn_Player : Pawn
 
     /// <summary>
     /// Pawn child class.
-    /// Creates a speed from a passed in vector. The vector will result in a magnitude that can be used as the speed calculation.
-    /// </summary>
-    /// <param name="vectorToUse">Vector3 to determine the speed</param>
-    /// <returns>Returns magnitude of vector to make a speed variable</returns>
-    public float makeSpeed(Vector3 vectorToUse)
-    {
-        Vector2 newVector = new Vector2(vectorToUse.x, vectorToUse.z);
-        return newVector.magnitude;
-    }
-
-    /// <summary>
-    /// Pawn child class.
     /// Checks if player is falling
     /// </summary>
     public override void checkFalling()
     {
         base.checkFalling();
+    }
+
+    /// <summary>
+    /// Equip a weapon
+    /// </summary>
+    /// <param name="weapon">Weapon to equip</param>
+    public override void equipWeapon(Weapon weapon)
+    {
+        base.equipWeapon(weapon);
+    }
+
+    /// <summary>
+    /// Remove currently equipped weapon
+    /// </summary>
+    /// <param name="weapon">Weapon to remove</param>
+    public override void unequipWeapon(Weapon weapon)
+    {
+        base.unequipWeapon(weapon);
     }
 }

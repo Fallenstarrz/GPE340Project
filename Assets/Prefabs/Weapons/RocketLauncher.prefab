@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 0
   m_Name: RightHandPosition
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -56,7 +56,7 @@ GameObject:
   m_Layer: 0
   m_Name: LeftHandPosition
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71,7 +71,7 @@ GameObject:
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -202,11 +202,11 @@ MonoBehaviour:
   shootCooldownCurrent: 0
   shootCooldownMax: 1.5
   damage: 50
-  bulletSpread: 1
   bulletSpeed: 50
   stopOnCollision: 1
   explosionRadius: 3
-  explosionForce: 20
+  explosionForce: 10
+  explosionVertivalForce: 3
   projectileLifespan: 3
   bulletPrefab: {fileID: 114748225510557852, guid: fc78ec369908ac442ab536c405e17ba0,
     type: 2}

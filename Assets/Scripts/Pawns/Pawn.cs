@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public abstract class Pawn : MonoBehaviour
 {
     [HideInInspector]
@@ -72,7 +73,9 @@ public abstract class Pawn : MonoBehaviour
     /// <param name="moveVector">movement direction from current position</param>
     public virtual void move(Vector3 moveVector)
     {
-
+        anim.SetFloat("Vertical", moveVector.z);
+        anim.SetFloat("Horizontal", moveVector.x);
+        anim.SetFloat("Speed", makeSpeed(moveVector));
     }
 
     /// <summary>
@@ -150,6 +153,18 @@ public abstract class Pawn : MonoBehaviour
                 anim.SetBool("isGrounded", true);
             }
         }
+    }
+
+    /// <summary>
+    /// Pawn child class.
+    /// Creates a speed from a passed in vector. The vector will result in a magnitude that can be used as the speed calculation.
+    /// </summary>
+    /// <param name="vectorToUse">Vector3 to determine the speed</param>
+    /// <returns>Returns magnitude of vector to make a speed variable</returns>
+    public float makeSpeed(Vector3 vectorToUse)
+    {
+        Vector2 newVector = new Vector2(vectorToUse.x, vectorToUse.z);
+        return newVector.magnitude;
     }
 
     /// <summary>

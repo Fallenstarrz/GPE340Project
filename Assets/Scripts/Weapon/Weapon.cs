@@ -29,6 +29,7 @@ public abstract class Weapon : MonoBehaviour
     public bool stopOnCollision;
     public float explosionRadius;
     public float explosionForce;
+    public float explosionVertivalForce;
     public float projectileLifespan;
 
     [Header("Bullet to Shoot")]
