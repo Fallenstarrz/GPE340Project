@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
         Vector3 movementVector = new Vector3(Input.GetAxis("Horizontal"),0.0f, Input.GetAxis("Vertical"));
         movementVector = Vector3.ClampMagnitude(movementVector, 1.0f);
         movementVector = pawn.tf.InverseTransformDirection(movementVector);
-
         pawn.move(movementVector);
     }
     /// <summary>

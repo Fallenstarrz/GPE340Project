@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Pawn_Player : Pawn
 {
+    protected override void Start()
+    {
+        base.Start();
+    }
     /// <summary>
     /// Pawn child class.
     /// Move towards the target. For the player the target is their movement input.
@@ -30,9 +34,9 @@ public class Pawn_Player : Pawn
         thePlane.Raycast(theRay, out distance);
         // Targetpoint is the vector3 at the distance on the ray
         Vector3 targetPoint = theRay.GetPoint(distance);
-        tf.LookAt(targetPoint);
+        //tf.LookAt(targetPoint);
 
-        base.rotateTowards(rotationTarget);
+        base.rotateTowards(targetPoint);
     }
 
     /// <summary>

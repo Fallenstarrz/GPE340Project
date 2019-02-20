@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Stats))]
 public abstract class Pawn : MonoBehaviour
 {
     [HideInInspector]
@@ -50,8 +51,14 @@ public abstract class Pawn : MonoBehaviour
     [Tooltip("Changes how fast the collider resizes when transitioning between crouching and standing")]
     protected float colliderChangeRate;
 
+    [Header("Rotation")]
+    [SerializeField]
+    [Range(0,360)]
+    [Tooltip("How fast the pawn will rotate per second")]
+    private float rotationSpeed;
+
     // Use this for initialization
-    protected void Start ()
+    protected virtual void Start ()
     {
         anim = GetComponent<Animator>();
         tf = GetComponent<Transform>();
@@ -85,7 +92,9 @@ public abstract class Pawn : MonoBehaviour
     /// <param name="rotationTarget">Target to rotate towards</param>
     public virtual void rotateTowards(Vector3 rotationTarget)
     {
-
+        Vector3 vectorToFace = rotationTarget - tf.position;
+        Quaternion lookRotation = Quaternion.LookRotation(vectorToFace, tf.up);
+        tf.rotation = Quaternion.RotateTowards(tf.rotation, lookRotation, rotationSpeed * Time.deltaTime);
     }
 
     /// <summary>

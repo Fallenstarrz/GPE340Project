@@ -2216,6 +2216,7 @@ MonoBehaviour:
   colliderCenterCrouching: {x: 0, y: 0.7, z: 0}
   colliderCenterStanding: {x: 0, y: 0.9, z: 0}
   colliderChangeRate: 1
+  rotationSpeed: 360
 --- !u!114 &114865189341573422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2228,7 +2229,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pawn: {fileID: 114803745484265616}
-  target: {fileID: 4405190489393480, guid: d1536dc2e16848a40988c787c5d80d39, type: 2}
+  target: {fileID: 0}
+  distanceToTargetMin: 8
+  distanceToTargetMax: 4
+  currentState: 0
 --- !u!136 &136001968449406800
 CapsuleCollider:
   m_ObjectHideFlags: 1

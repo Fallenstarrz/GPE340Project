@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     private Vector3 offset;
     [SerializeField]
     [Tooltip("Target the camera will follow")]
-    private Transform targetTF;
+    private Transform target;
     private Transform tf;
 
 	// Use this for initialization
@@ -33,7 +33,10 @@ public class CameraController : MonoBehaviour
     /// </summary>
     void moveCamera()
     {
-        Vector3 newPosition = targetTF.position + offset;
-        tf.position = Vector3.Lerp(tf.position, newPosition, smoothRate);
+        if (target != null)
+        {
+            Vector3 newPosition = target.position + offset;
+            tf.position = Vector3.Lerp(tf.position, newPosition, smoothRate);
+        }
     }
 }
