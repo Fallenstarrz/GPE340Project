@@ -125,7 +125,7 @@ public class AIController : MonoBehaviour
         {
             currentState = AIStates.chase;
         }
-        else if (distanceToTargetActual >= distanceToTargetMax)
+        else if (distanceToTargetActual <= distanceToTargetMax)
         {
             currentState = AIStates.shoot;
         }
@@ -138,7 +138,7 @@ public class AIController : MonoBehaviour
 
     void stateShoot()
     {
-        if (distanceToTargetActual <= distanceToTargetMax)
+        if (distanceToTargetActual >= distanceToTargetMax)
         {
             currentState = AIStates.chaseAndShoot;
         }
