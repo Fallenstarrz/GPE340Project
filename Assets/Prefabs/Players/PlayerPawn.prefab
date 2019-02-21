@@ -2181,6 +2181,7 @@ MonoBehaviour:
   colliderCenterCrouching: {x: 0, y: 0.7, z: 0}
   colliderCenterStanding: {x: 0, y: 0.9, z: 0}
   colliderChangeRate: 1
+  rotationSpeed: 360
 --- !u!136 &136780239296034382
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -2308,7 +2309,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: 476a7204d94a2a442984b5b2ee652a08, type: 3}
+  - {fileID: 2100000, guid: 0c36d9195b3208744b75d54c7283dd9e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -2155,7 +2155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdc8673249bb344ba08e17ab0ab6ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 50
+  healthMax: 20
   healthCurrent: 0
   healthFill: {fileID: 0}
   staminaMax: 100
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   staminaRegenDelayMax: 3
   staminaRegenFill: {fileID: 0}
   staminaDrainSprinting: 0
-  shieldMax: 10
+  shieldMax: 0
   shieldCurrent: 0
   shieldFill: {fileID: 0}
   shieldRegenRate: 2
@@ -2261,7 +2261,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 476a7204d94a2a442984b5b2ee652a08, type: 3}
+  - {fileID: 2100000, guid: bf2e1b8abe435f14bafd860462f1568a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2360,7 +2360,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100002, guid: 476a7204d94a2a442984b5b2ee652a08, type: 3}
+  - {fileID: 2100000, guid: 6b1d49905751b434f92f12553e28fa6e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

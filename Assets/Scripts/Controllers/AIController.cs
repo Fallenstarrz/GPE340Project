@@ -99,7 +99,7 @@ public class AIController : MonoBehaviour
         }
         else
         {
-            // Wander around randomly
+            // Wander Around Aimlessly
         }
     }
 
