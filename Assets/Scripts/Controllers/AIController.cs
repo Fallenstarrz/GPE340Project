@@ -7,7 +7,7 @@ using UnityEngine.AI;
 public class AIController : MonoBehaviour
 {
     [SerializeField]
-    private Pawn pawn;
+    private Pawn_AI pawn;
 
     [SerializeField]
     private Transform target;
@@ -30,12 +30,7 @@ public class AIController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        // TODO: Set target from gameManager when we create game manager, for now we will find object with tag
-        // if (gameManager.instance.player != null)
-        //{
-        //    target = gameManager.instance.player.transform;
-        //}
-        target = FindObjectOfType<Pawn_Player>().transform;
+        acquireTarget();
 	}
 	
 	// Update is called once per frame
@@ -45,6 +40,10 @@ public class AIController : MonoBehaviour
         {
             distanceToTargetActual = Vector3.Distance(pawn.tf.position, target.position);
         }
+        else
+        {
+            acquireTarget();
+        }
 
         // State manager
         switchStates();
@@ -53,6 +52,8 @@ public class AIController : MonoBehaviour
         // Weapon call functions
         // Still need to come up with a way to manage weapons on AIs
         switchWeapons();
+
+        pawn.canSeeTarget(target);
     }
 
     void switchStates()
@@ -115,7 +116,7 @@ public class AIController : MonoBehaviour
         }
         else
         {
-            movementHandler();
+            movementHandler(target.position);
         }
     }
 
@@ -131,7 +132,7 @@ public class AIController : MonoBehaviour
         }
         else
         {
-            movementHandler();
+            movementHandler(target.position);
             shootHandler();
         }
     }
@@ -144,6 +145,7 @@ public class AIController : MonoBehaviour
         }
         else
         {
+            movementHandler(pawn.tf.position);
             rotationHandler();
             shootHandler();
         }
@@ -166,11 +168,11 @@ public class AIController : MonoBehaviour
         }
     }
 
-    void movementHandler()
+    void movementHandler(Vector3 targetPosition)
     {
         if (target != null)
         {
-            pawn.move(target.position);
+            pawn.move(targetPosition);
         }
     }
 

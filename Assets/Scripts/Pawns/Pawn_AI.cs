@@ -26,7 +26,6 @@ public class Pawn_AI : Pawn
     }
     public override void rotateTowards(Vector3 rotationTarget)
     {
-        // Add functionality here
         base.rotateTowards(rotationTarget);
     }
     public override void sprint(bool sprinting)
@@ -48,6 +47,26 @@ public class Pawn_AI : Pawn
     public override void unequipWeapon(Weapon weapon)
     {
         base.unequipWeapon(weapon);
+    }
+    public bool canSeeTarget(Transform target)
+    {
+        Vector3 targetPosition = new Vector3(target.position.x, tf.position.y, target.position.z);
+        Vector3 vectorToTarget = (targetPosition - tf.position);
+
+        RaycastHit hitInfo;
+        Physics.Raycast(tf.position, vectorToTarget, out hitInfo);
+        if (hitInfo.collider == null)
+        {
+            return false;
+        }
+
+        Collider targetCollider = target.GetComponent<Collider>();
+        if (targetCollider != hitInfo.collider)
+        {
+            return false;
+        }
+
+        return true;
     }
     private void OnAnimatorMove()
     {

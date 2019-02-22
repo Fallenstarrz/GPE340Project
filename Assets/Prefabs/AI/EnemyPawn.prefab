@@ -2230,8 +2230,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pawn: {fileID: 114803745484265616}
   target: {fileID: 0}
-  distanceToTargetMin: 8
-  distanceToTargetMax: 4
+  distanceToTargetMin: 16
+  distanceToTargetMax: 8
   currentState: 0
 --- !u!136 &136001968449406800
 CapsuleCollider:
