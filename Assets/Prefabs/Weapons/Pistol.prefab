@@ -200,13 +200,14 @@ MonoBehaviour:
   ammoToAdd: 30
   firePoint: {fileID: 4977351045679964}
   shootCooldownCurrent: 0
-  shootCooldownMax: 1
+  shootCooldownMax: 0.5
   damage: 10
-  bulletSpread: 2
+  bulletSpread: 1
   bulletSpeed: 50
   stopOnCollision: 1
   explosionRadius: 0
   explosionForce: 0
+  explosionVertivalForce: 0
   projectileLifespan: 3
   bulletPrefab: {fileID: 114238328231796184, guid: 332084d25ef035d439eb2c271ed9eca1,
     type: 2}

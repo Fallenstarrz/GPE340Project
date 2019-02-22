@@ -24,7 +24,7 @@ public abstract class Weapon : MonoBehaviour
 
     [Header("Bullet Info")]
     public float damage;
-    protected float bulletSpread;
+    public float bulletSpread;
     public float bulletSpeed;
     public bool stopOnCollision;
     public float explosionRadius;
