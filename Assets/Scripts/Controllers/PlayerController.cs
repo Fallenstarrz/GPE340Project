@@ -7,30 +7,40 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Pawn pawn;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
+        if (pawn == null)
+        {
+            if (GameManager.instance.spawnedPlayer != null)
+            {
+                pawn = GameManager.instance.spawnedPlayer.GetComponent<Pawn>(); 
+            }
+        }
         // Call methods on update
-        movementHandler();
-        rotationHandler();
-        sprintHandler();
-        crouchHandler();
-        switchWeapons();
-        shootHandler();
-	}
+        else if (!pawn.isDead)
+        {
+            movementHandler();
+            rotationHandler();
+            sprintHandler();
+            crouchHandler();
+            switchWeapons();
+            shootHandler();
+        }
+    }
 
     /// <summary>
     /// Tell the pawn to move in movement direction while maintaining world forward as pawn's forward.
     /// </summary>
     void movementHandler()
     {
-        Vector3 movementVector = new Vector3(Input.GetAxis("Horizontal"),0.0f, Input.GetAxis("Vertical"));
+        Vector3 movementVector = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
         movementVector = Vector3.ClampMagnitude(movementVector, 1.0f);
         movementVector = pawn.tf.InverseTransformDirection(movementVector);
         pawn.move(movementVector);

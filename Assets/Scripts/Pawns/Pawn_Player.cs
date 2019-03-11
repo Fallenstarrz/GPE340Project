@@ -6,6 +6,7 @@ public class Pawn_Player : Pawn
 {
     protected override void Start()
     {
+        GameManager.instance.spawnedPlayer = this.gameObject;
         base.Start();
     }
     /// <summary>
@@ -101,5 +102,10 @@ public class Pawn_Player : Pawn
     public override void unequipWeapon(Weapon weapon)
     {
         base.unequipWeapon(weapon);
+    }
+
+    public override void die()
+    {
+        base.die();
     }
 }

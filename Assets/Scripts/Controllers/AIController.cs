@@ -110,7 +110,7 @@ public class AIController : MonoBehaviour
         {
             currentState = AIStates.wander;
         }
-        else if (distanceToTargetActual <= distanceToTargetMin)
+        else if (distanceToTargetActual <= distanceToTargetMin && pawn.canSeeTarget(target))
         {
             currentState = AIStates.chaseAndShoot;
         }
@@ -126,20 +126,23 @@ public class AIController : MonoBehaviour
         {
             currentState = AIStates.chase;
         }
-        else if (distanceToTargetActual <= distanceToTargetMax)
+        else if (distanceToTargetActual <= distanceToTargetMax && pawn.canSeeTarget(target))
         {
             currentState = AIStates.shoot;
         }
         else
         {
-            movementHandler(target.position);
+            if (target != null)
+            {
+                movementHandler(target.position); 
+            }
             shootHandler();
         }
     }
 
     void stateShoot()
     {
-        if (distanceToTargetActual >= distanceToTargetMax)
+        if (distanceToTargetActual >= distanceToTargetMax && pawn.canSeeTarget(target))
         {
             currentState = AIStates.chaseAndShoot;
         }
@@ -164,7 +167,10 @@ public class AIController : MonoBehaviour
         if (target == null)
         {
             // TODO: Temp: Get reference from game manager
-            target = FindObjectOfType<Pawn_Player>().transform;
+            if (GameManager.instance.spawnedPlayer != null)
+            {
+                target = GameManager.instance.spawnedPlayer.gameObject.transform;
+            }
         }
     }
 

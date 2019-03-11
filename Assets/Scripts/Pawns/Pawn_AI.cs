@@ -10,6 +10,10 @@ public class Pawn_AI : Pawn
 
     private Vector3 desiredVelocity;
 
+    [SerializeField]
+    [Range(0,360)]
+    private float fieldOfView;
+
     // Handle this!
     protected override void Start()
     {
@@ -50,26 +54,48 @@ public class Pawn_AI : Pawn
     }
     public bool canSeeTarget(Transform target)
     {
-        Vector3 targetPosition = new Vector3(target.position.x, tf.position.y, target.position.z);
-        Vector3 vectorToTarget = (targetPosition - tf.position);
+        if (target != null)
+        {
+            Vector3 targetPosition = new Vector3(target.position.x, tf.position.y, target.position.z);
+            Vector3 vectorToTarget = (targetPosition - tf.position);
+            float angle = Vector3.Angle(vectorToTarget, tf.forward);
 
-        RaycastHit hitInfo;
-        Physics.Raycast(tf.position, vectorToTarget, out hitInfo);
-        if (hitInfo.collider == null)
+            if (angle >= fieldOfView)
+            {
+                return false;
+            }
+
+            RaycastHit hitInfo;
+            Physics.Raycast(tf.position, vectorToTarget, out hitInfo);
+            if (hitInfo.collider == null)
+            {
+                return false;
+            }
+
+            Collider targetCollider = target.GetComponent<Collider>();
+            if (targetCollider != hitInfo.collider)
+            {
+                return false;
+            }
+
+            return true; 
+        }
+        else
         {
             return false;
         }
-
-        Collider targetCollider = target.GetComponent<Collider>();
-        if (targetCollider != hitInfo.collider)
-        {
-            return false;
-        }
-
-        return true;
     }
     private void OnAnimatorMove()
     {
-        agent.velocity = anim.velocity;
+        if (anim != null)
+        {
+            agent.velocity = anim.velocity;  
+        }
+    }
+
+    public override void die()
+    {
+        GameManager.instance.currentEnemiesSpawned--;
+        base.die();
     }
 }

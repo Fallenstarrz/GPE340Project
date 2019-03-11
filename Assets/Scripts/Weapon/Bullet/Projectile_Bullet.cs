@@ -11,19 +11,19 @@ public class Projectile_Bullet : Projectile
     /// Current functionality results in a ricochet, to make into a through shot just change bullets collider to a trigger and the projectile function for collision enter to trigger enter
     /// </summary>
     /// <param name="collision"></param>
-    protected override void OnCollisionEnter(Collision collision)
+    protected override void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.GetComponent<Stats>() != null)
+        if (other.gameObject.GetComponent<Stats>() != null)
         {
-            collision.gameObject.GetComponent<Stats>().takeDamage(weaponThatShot.damage);
+            other.gameObject.GetComponent<Stats>().takeDamage(weaponThatShot.damage);
             if (weaponThatShot.stopOnCollision == true)
             {
-                base.OnCollisionEnter(collision);
+                base.OnTriggerEnter(other);
             }
         }
         else
         {
-            base.OnCollisionEnter(collision);
+            base.OnTriggerEnter(other);
         }
     }
 }

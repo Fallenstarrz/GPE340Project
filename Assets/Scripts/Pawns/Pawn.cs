@@ -12,6 +12,7 @@ public abstract class Pawn : MonoBehaviour
     public Transform tf;
     [HideInInspector]
     public Stats stats;
+    protected Ragdoll ragdoll;
 
     [Header("Sockets")]
     public Transform weaponSocket;
@@ -20,8 +21,8 @@ public abstract class Pawn : MonoBehaviour
     [HideInInspector]
     public Transform leftHandPoint;
 
-    [Header ("Falling Settings")]
-    [Range (0f,10f)]
+    [Header("Falling Settings")]
+    [Range(0f, 10f)]
     [SerializeField]
     [Tooltip("Distance at which to check for ground")]
     protected float checkGroundDistance;
@@ -47,26 +48,32 @@ public abstract class Pawn : MonoBehaviour
     [Tooltip("Center of collider during standing")]
     protected Vector3 colliderCenterStanding;
     [SerializeField]
-    [Range(0f,1f)]
+    [Range(0f, 1f)]
     [Tooltip("Changes how fast the collider resizes when transitioning between crouching and standing")]
     protected float colliderChangeRate;
 
     [Header("Rotation")]
     [SerializeField]
-    [Range(0,360)]
+    [Range(0, 360)]
     [Tooltip("How fast the pawn will rotate per second")]
     private float rotationSpeed;
 
+    [Header("Death")]
+    [Tooltip("Reference Only. Set when pawn dies.")]
+    public bool isDead;
+    public float timeToWaitForDestroy;
+
     // Use this for initialization
-    protected virtual void Start ()
+    protected virtual void Start()
     {
         anim = GetComponent<Animator>();
         tf = GetComponent<Transform>();
         charCollider = GetComponent<CapsuleCollider>();
         stats = GetComponent<Stats>();
+        ragdoll = GetComponent<Ragdoll>();
 
         equipWeapon(stats.inventory[0]);
-	}
+    }
 
     protected void Update()
     {
@@ -137,7 +144,7 @@ public abstract class Pawn : MonoBehaviour
                 anim.SetBool("isCrouching", crouching);
             }
         }
-        Debug.DrawRay(tf.position-new Vector3(0,-.5f,0), tf.up, Color.red);
+        Debug.DrawRay(tf.position - new Vector3(0, -.5f, 0), tf.up, Color.red);
     }
 
     /// <summary>
@@ -149,7 +156,7 @@ public abstract class Pawn : MonoBehaviour
     {
         RaycastHit hit;
         float distanceToGround;
-        if (Physics.SphereCast(tf.position - new Vector3(0,-.5f,0), charCollider.radius ,-tf.up, out hit))
+        if (Physics.SphereCast(tf.position - new Vector3(0, -.5f, 0), charCollider.radius, -tf.up, out hit))
         {
             distanceToGround = hit.distance;
             anim.SetFloat("distanceToGround", distanceToGround);
@@ -208,13 +215,17 @@ public abstract class Pawn : MonoBehaviour
     /// <summary>
     /// Destroy pawn gameObject when this function is called
     /// </summary>
-    public void die()
+    public virtual void die()
     {
-        Destroy(gameObject);
-        // Add animation for death
-        // Add effect for death
-        // Add sound for death
-        // Trigger Respawn
+        isDead = true;
+        ragdoll.activateRagdoll();
+
+        Invoke("deleteObject", timeToWaitForDestroy);
+    }
+
+    public void deleteObject()
+    {
+        Destroy(this.gameObject);
     }
 
     /// <summary>

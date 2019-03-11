@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner_Weapon : Spawner
+public class ItemSpawner_Weapon : ItemSpawner
 {
     public List<GameObject> weaponsList;
 

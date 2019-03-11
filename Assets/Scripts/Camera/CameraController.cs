@@ -27,6 +27,13 @@ public class CameraController : MonoBehaviour
 	void Update ()
     {
         moveCamera();
+        if (target == null)
+        {
+            if (GameManager.instance.spawnedPlayer != null)
+            {
+                target = GameManager.instance.spawnedPlayer.gameObject.transform; 
+            }
+        }
 	}
     /// <summary>
     /// Set camera position to target's position plus an offset and lerp between those two positions.

@@ -8,8 +8,8 @@ public class Projectile_Missile : Projectile
     /// Override function for collisions
     /// Handles what happens when a missile collides with an object
     /// </summary>
-    /// <param name="collision">collider missile hit</param>
-    protected override void OnCollisionEnter(Collision collision)
+    /// <param name="other">collider missile hit</param>
+    protected override void OnTriggerEnter(Collider other)
     {
         Collider[] hitColliders = Physics.OverlapSphere(tf.position, weaponThatShot.explosionRadius);
         foreach (Collider hit in hitColliders)
@@ -27,6 +27,6 @@ public class Projectile_Missile : Projectile
                 hit.gameObject.GetComponent<Rigidbody>().AddExplosionForce(weaponThatShot.explosionForce, tf.position, weaponThatShot.explosionRadius, weaponThatShot.explosionVertivalForce, ForceMode.Impulse);
             }
         }
-        base.OnCollisionEnter(collision);
+        base.OnTriggerEnter(other);
     }
 }

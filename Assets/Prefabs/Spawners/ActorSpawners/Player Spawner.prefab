@@ -9,51 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1737444037090136}
+  m_RootGameObject: {fileID: 1115978539233374}
   m_IsPrefabAsset: 1
---- !u!1 &1737444037090136
+--- !u!1 &1115978539233374
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4579764197023440}
-  - component: {fileID: 114034236004902360}
+  - component: {fileID: 4833567862683780}
+  - component: {fileID: 114600239203046440}
   m_Layer: 0
-  m_Name: Enemy Spawner
+  m_Name: Player Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4579764197023440
+--- !u!4 &4833567862683780
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1737444037090136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 1115978539233374}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114034236004902360
+--- !u!114 &114600239203046440
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1737444037090136}
+  m_GameObject: {fileID: 1115978539233374}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085a33a00876b748b98c867beba1c48, type: 3}
+  m_Script: {fileID: 11500000, guid: db0218a656117d6438e44b981013bf67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnedObject: {fileID: 0}
-  objectToSpawn: {fileID: 0}
-  spawnTimeCurrent: 0
-  spawnTimeMax: 3
-  spawnAtStart: 1
-  enemy: {fileID: 1000697963815194, guid: c7d5377350b5bd448b29b4cfa1ab0794, type: 2}
+  actorToSpawn:
+  - {fileID: 1580715347740658, guid: d1536dc2e16848a40988c787c5d80d39, type: 2}
+  scale: {x: 1, y: 2, z: 0.5}
+  spawnRate: 1
+  tf: {fileID: 4833567862683780}

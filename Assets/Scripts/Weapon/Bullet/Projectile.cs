@@ -46,8 +46,8 @@ public class Projectile : MonoBehaviour
     /// <summary>
     /// destroy the projectile's gameobject, so it doesn't exist longer than it needs to on collision
     /// </summary>
-    /// <param name="collision"></param>
-    protected virtual void OnCollisionEnter(Collision collision)
+    /// <param name="other"></param>
+    protected virtual void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
     }

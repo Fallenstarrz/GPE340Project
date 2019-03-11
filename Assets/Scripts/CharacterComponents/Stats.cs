@@ -70,10 +70,10 @@ public class Stats : MonoBehaviour
         staminaCurrent = staminaMax;
         shieldCurrent = shieldMax;
         pistolAmmoCurrent = pistolAmmoMax;
-        sniperAmmoCurrent = 0;
-        machineGunAmmoCurrent = 0;
-        RocketLauncherAmmoCurrent = 0;
-        rifleAmmoCurrent = 0;
+        sniperAmmoCurrent = sniperAmmoMax/2;
+        machineGunAmmoCurrent = machineGunAmmoMax/2;
+        RocketLauncherAmmoCurrent = RocketLauncherAmmoMax/2;
+        rifleAmmoCurrent = rifleAmmoMax/2;
 
         inventory[0] = startingWeapon;
 	}

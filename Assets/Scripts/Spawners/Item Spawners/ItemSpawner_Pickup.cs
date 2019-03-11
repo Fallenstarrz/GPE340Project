@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner_Pickup : Spawner
+public class ItemSpawner_Pickup : ItemSpawner
 {
     public List<GameObject> pickupsList;
 
