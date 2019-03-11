@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actorToSpawn:
-  - {fileID: 1580715347740658, guid: d1536dc2e16848a40988c787c5d80d39, type: 2}
+  - {fileID: 1960012580461128, guid: d1536dc2e16848a40988c787c5d80d39, type: 2}
   scale: {x: 1, y: 2, z: 0.5}
   spawnRate: 1
   tf: {fileID: 4833567862683780}

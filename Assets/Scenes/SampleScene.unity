@@ -2734,6 +2734,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114600239203046440, guid: f09394f14aa861046a83204055368e6c,
+        type: 2}
+      propertyPath: actorToSpawn.Array.data[0]
+      value: 
+      objectReference: {fileID: 1960012580461128, guid: d1536dc2e16848a40988c787c5d80d39,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f09394f14aa861046a83204055368e6c, type: 2}
   m_IsPrefabAsset: 0
