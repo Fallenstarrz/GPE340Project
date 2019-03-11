@@ -213,7 +213,8 @@ public abstract class Pawn : MonoBehaviour
     }
 
     /// <summary>
-    /// Destroy pawn gameObject when this function is called
+    /// Destroy pawn gameObject after a delay when this function is called
+    /// Set isDead to true and activate ragdoll
     /// </summary>
     public virtual void die()
     {
@@ -223,6 +224,9 @@ public abstract class Pawn : MonoBehaviour
         Invoke("deleteObject", timeToWaitForDestroy);
     }
 
+    /// <summary>
+    /// Utility function used to destroy a gameObject
+    /// </summary>
     public void deleteObject()
     {
         Destroy(this.gameObject);

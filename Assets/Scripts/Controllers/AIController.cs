@@ -16,6 +16,7 @@ public class AIController : MonoBehaviour
     public float distanceToTargetMax;
     private float distanceToTargetActual;
 
+    // States AI can perform
     public enum AIStates
     {
         idle,
@@ -56,6 +57,7 @@ public class AIController : MonoBehaviour
         pawn.canSeeTarget(target);
     }
 
+    // Set AI states
     void switchStates()
     {
         switch (currentState)
@@ -80,6 +82,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // Idle
     void stateIdle()
     {
         if (target != null)
@@ -92,6 +95,8 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // Wander
+    //TODO: Need to actually wander around
     void stateWander()
     {
         if (target != null)
@@ -104,6 +109,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // chase down the player
     void stateChase()
     {
         if (target == null)
@@ -120,6 +126,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // chase down the player while shooting
     void stateChaseAndShoot()
     {
         if (distanceToTargetActual >= distanceToTargetMin)
@@ -140,6 +147,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // shoot state: Stand still and shoot at player
     void stateShoot()
     {
         if (distanceToTargetActual >= distanceToTargetMax && pawn.canSeeTarget(target))
@@ -154,6 +162,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // Dead state, no backward transitions
     void stateDead()
     {
         if (pawn.stats.healthCurrent <= 0)
@@ -162,11 +171,11 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // if there is no target, get one
     void acquireTarget()
     {
         if (target == null)
         {
-            // TODO: Temp: Get reference from game manager
             if (GameManager.instance.spawnedPlayer != null)
             {
                 target = GameManager.instance.spawnedPlayer.gameObject.transform;
@@ -174,6 +183,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // move the pawn taking targets position as the parameter
     void movementHandler(Vector3 targetPosition)
     {
         if (target != null)
@@ -182,6 +192,7 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // rotate towards target if a target exists
     void rotationHandler()
     {
         if (target != null)
@@ -190,12 +201,14 @@ public class AIController : MonoBehaviour
         }
     }
 
+    // TODO: Allow AI to swap to different weapons
     void switchWeapons()
     {
         // add functions here
         // This function is supposed to manage weapon switching
     }
 
+    // shoot weapon that is currently equipped
     void shootHandler()
     {
         pawn.stats.weaponEquipped.Shoot(pawn.stats);

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ActorSpawner_Player : ActorSpawner
 {
+    /// <summary>
+    /// if a player is not currently spawned, then spawn one
+    /// </summary>
     protected override void spawnActor()
     {
         if (GameManager.instance.spawnedPlayer == null)
@@ -12,6 +15,10 @@ public class ActorSpawner_Player : ActorSpawner
         }
     }
 
+    /// <summary>
+    /// draw gizmos to show spawn points.
+    /// These will be green in color in the world
+    /// </summary>
     protected override void OnDrawGizmos()
     {
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);

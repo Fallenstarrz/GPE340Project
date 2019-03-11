@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // Singleton game manager
+        #region Singleton
         if (instance == null)
         {
             instance = this;
@@ -22,7 +24,8 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
-        }
+        } 
+        #endregion
     }
 
     // Update is called once per frame

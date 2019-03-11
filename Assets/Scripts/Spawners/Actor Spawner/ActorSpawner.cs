@@ -22,12 +22,18 @@ public class ActorSpawner : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// spawn an actor at random from our list
+    /// </summary>
     protected virtual void spawnActor()
     {
         int objectToSpawn = Random.Range(0, actorToSpawn.Count);
         Instantiate(actorToSpawn[objectToSpawn], tf.position, tf.rotation);
     }
 
+    /// <summary>
+    /// draw line that points to the forward direction of the spawner
+    /// </summary>
     protected virtual void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;

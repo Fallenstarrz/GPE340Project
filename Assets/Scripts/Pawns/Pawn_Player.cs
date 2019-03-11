@@ -104,6 +104,9 @@ public class Pawn_Player : Pawn
         base.unequipWeapon(weapon);
     }
 
+    /// <summary>
+    /// Die
+    /// </summary>
     public override void die()
     {
         base.die();

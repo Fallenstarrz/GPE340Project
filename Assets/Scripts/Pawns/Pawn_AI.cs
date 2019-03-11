@@ -21,6 +21,10 @@ public class Pawn_AI : Pawn
         base.Start();
     }
 
+    /// <summary>
+    /// Move pawn
+    /// </summary>
+    /// <param name="moveVector">where to move to</param>
     public override void move(Vector3 moveVector)
     {
         agent.SetDestination(moveVector);
@@ -28,30 +32,59 @@ public class Pawn_AI : Pawn
         Vector3 input = transform.InverseTransformDirection(desiredVelocity);
         base.move(input);
     }
+    /// <summary>
+    /// rotate pawn
+    /// </summary>
+    /// <param name="rotationTarget">what to rotate towards</param>
     public override void rotateTowards(Vector3 rotationTarget)
     {
         base.rotateTowards(rotationTarget);
     }
+    /// <summary>
+    /// sprint
+    /// </summary>
+    /// <param name="sprinting">should character be sprinting</param>
     public override void sprint(bool sprinting)
     {
         base.sprint(sprinting);
     }
+    /// <summary>
+    /// crouch
+    /// </summary>
+    /// <param name="crouching">should character be crouching</param>
     public override void crouch(bool crouching)
     {
         base.crouch(crouching);
     }
+    /// <summary>
+    /// check if we are falling
+    /// </summary>
     public override void checkFalling()
     {
         base.checkFalling();
     }
+    /// <summary>
+    ///  equip a weapon
+    /// </summary>
+    /// <param name="weapon"></param>
     public override void equipWeapon(Weapon weapon)
     {
         base.equipWeapon(weapon);
     }
+    /// <summary>
+    /// unequip a weapon
+    /// </summary>
+    /// <param name="weapon"></param>
     public override void unequipWeapon(Weapon weapon)
     {
         base.unequipWeapon(weapon);
     }
+    /// <summary>
+    /// Can see target
+    /// If target is in field of view, and nothing is between the target and this pawn
+    /// </summary>
+    /// <param name="target"></param>
+    /// <returns></returns>
     public bool canSeeTarget(Transform target)
     {
         if (target != null)
@@ -85,6 +118,9 @@ public class Pawn_AI : Pawn
             return false;
         }
     }
+    /// <summary>
+    /// if our animator isn't disabled then allow root motion to propel our character
+    /// </summary>
     private void OnAnimatorMove()
     {
         if (anim != null)
@@ -93,6 +129,9 @@ public class Pawn_AI : Pawn
         }
     }
 
+    /// <summary>
+    /// when we die, tell GM to remove 1 from currentEnemiesSpawned
+    /// </summary>
     public override void die()
     {
         GameManager.instance.currentEnemiesSpawned--;

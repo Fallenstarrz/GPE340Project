@@ -14,7 +14,9 @@ public class Ragdoll : MonoBehaviour
     private Animator mainAnimator;
     private NavMeshAgent mainAgent;
 
-    // Use this for initialization
+    /// <summary>
+    /// Set up and cache required items to ragdoll
+    /// </summary>
     void Start()
     {
         if (GetComponent<AIController>() != null)
@@ -33,9 +35,15 @@ public class Ragdoll : MonoBehaviour
         subColliders = new List<Collider>(GetComponentsInChildren<Collider>());
         subRigidbodies = new List<Rigidbody>(GetComponentsInChildren<Rigidbody>());
 
+        // Default deactivate
         deactivateRagdoll();
     }
 
+    /// <summary>
+    /// DeActivate ragdoll by turning all subcolliders and subrigidbodies off
+    /// Then we turn everything else on.
+    /// If it is an AI we make sure to enable the controller and agent components as well
+    /// </summary>
     public void deactivateRagdoll()
     {
         foreach (Collider collider in subColliders)
@@ -60,6 +68,10 @@ public class Ragdoll : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Activate ragdoll by activating all subcolliders and subrigidbodies
+    /// then deactivate everything else.
+    /// </summary>
     public void activateRagdoll()
     {
         foreach (Collider collider in subColliders)
