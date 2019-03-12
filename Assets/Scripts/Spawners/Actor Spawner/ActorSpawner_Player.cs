@@ -21,8 +21,13 @@ public class ActorSpawner_Player : ActorSpawner
     /// </summary>
     protected override void OnDrawGizmos()
     {
+        Color newColor;
+        newColor.r = 0;
+        newColor.g = 255;
+        newColor.b = 0;
+        newColor.a = 255;
         Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, Vector3.one);
-        Gizmos.color = Color.Lerp(Color.green, Color.clear, 0.5f);
+        Gizmos.color = newColor;
         Gizmos.DrawCube(Vector3.up * scale.y / 2f, scale);
         base.OnDrawGizmos();
     }
