@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 195981226946271680}
   - component: {fileID: 114865189341573422}
   - component: {fileID: 114568668959348644}
+  - component: {fileID: 114387540159606442}
   m_Layer: 10
   m_Name: EnemyPawn_Pistol
   m_TagString: Untagged
@@ -2473,6 +2474,19 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
+--- !u!114 &114387540159606442
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000697963815194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec37b38493f9c9b4b8aec0bdc21bb744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jointsMesh: {fileID: 137547917717618366}
+  surfaceMesh: {fileID: 137254751835764040}
 --- !u!114 &114398987576094198
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2580,6 +2594,7 @@ MonoBehaviour:
   rotationSpeed: 360
   isDead: 0
   timeToWaitForDestroy: 7
+  dissolver: {fileID: 0}
   fieldOfView: 90
 --- !u!114 &114823514375089240
 MonoBehaviour:

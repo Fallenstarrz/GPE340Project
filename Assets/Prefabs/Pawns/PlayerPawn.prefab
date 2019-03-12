@@ -1565,6 +1565,7 @@ GameObject:
   - component: {fileID: 114145913802495018}
   - component: {fileID: 114863861606438210}
   - component: {fileID: 114370164523624796}
+  - component: {fileID: 114025866957118090}
   m_Layer: 0
   m_Name: PlayerPawn
   m_TagString: Untagged
@@ -1849,7 +1850,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960012580461128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27983227, y: 9.620864e-17, z: -12.998556}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4176380719613908}
@@ -2853,6 +2854,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114025866957118090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1960012580461128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec37b38493f9c9b4b8aec0bdc21bb744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jointsMesh: {fileID: 137743401501993424}
+  surfaceMesh: {fileID: 137511595229346958}
 --- !u!114 &114027378279715708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3117,6 +3131,7 @@ MonoBehaviour:
   rotationSpeed: 360
   isDead: 0
   timeToWaitForDestroy: 5
+  dissolver: {fileID: 0}
 --- !u!114 &114150158443508108
 MonoBehaviour:
   m_ObjectHideFlags: 1

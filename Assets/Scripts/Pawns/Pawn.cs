@@ -62,6 +62,7 @@ public abstract class Pawn : MonoBehaviour
     [Tooltip("Reference Only. Set when pawn dies.")]
     public bool isDead;
     public float timeToWaitForDestroy;
+    public Dissolver dissolver;
 
     // Use this for initialization
     protected virtual void Start()
@@ -71,6 +72,7 @@ public abstract class Pawn : MonoBehaviour
         charCollider = GetComponent<CapsuleCollider>();
         stats = GetComponent<Stats>();
         ragdoll = GetComponent<Ragdoll>();
+        dissolver = GetComponent<Dissolver>();
 
         equipWeapon(stats.inventory[0]);
     }
@@ -221,7 +223,18 @@ public abstract class Pawn : MonoBehaviour
         isDead = true;
         ragdoll.activateRagdoll();
 
-        Invoke("deleteObject", timeToWaitForDestroy);
+        Invoke("dissolveObject", timeToWaitForDestroy);
+    }
+
+    /// <summary>
+    /// sets shader up a bit
+    /// </summary>
+    public void dissolveObject()
+    {
+        if (dissolver != null)
+        {
+            dissolver.enabled = true; 
+        }
     }
 
     /// <summary>
