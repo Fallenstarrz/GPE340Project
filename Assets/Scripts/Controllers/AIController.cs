@@ -16,6 +16,13 @@ public class AIController : MonoBehaviour
     public float distanceToTargetMax;
     private float distanceToTargetActual;
 
+    public Vector3 spawnPosition;
+    public float closeEnough;
+    public float distanceToWander;
+
+    bool isWandering;
+    Vector3 wanderingDestination;
+
     // States AI can perform
     public enum AIStates
     {
@@ -28,14 +35,14 @@ public class AIController : MonoBehaviour
     }
     public AIStates currentState;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         acquireTarget();
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         if (target != null)
         {
@@ -96,16 +103,30 @@ public class AIController : MonoBehaviour
     }
 
     // Wander
-    //TODO: Need to actually wander around
     void stateWander()
     {
-        if (target != null)
+        if (target != null && !target.gameObject.GetComponent<Pawn>().isDead)
         {
             currentState = AIStates.chase;
         }
+        // wander around aimlessly
+        else if (Vector3.Distance(pawn.tf.position, spawnPosition) <= closeEnough)
+        {
+            if (isWandering == false)
+            {
+                wanderingDestination = (Random.insideUnitCircle * distanceToWander);
+                pawn.move(wanderingDestination);
+                isWandering = true;
+            }
+            else if (Vector3.Distance(pawn.tf.position, wanderingDestination) <= closeEnough)
+            {
+                isWandering = false;
+            }
+        }
+        // return home
         else
         {
-            // Wander Around Aimlessly
+            pawn.move(spawnPosition);
         }
     }
 
@@ -113,6 +134,10 @@ public class AIController : MonoBehaviour
     void stateChase()
     {
         if (target == null)
+        {
+            currentState = AIStates.wander;
+        }
+        else if (target.gameObject.GetComponent<Pawn>().isDead)
         {
             currentState = AIStates.wander;
         }
@@ -129,7 +154,15 @@ public class AIController : MonoBehaviour
     // chase down the player while shooting
     void stateChaseAndShoot()
     {
-        if (distanceToTargetActual >= distanceToTargetMin)
+        if (target == null)
+        {
+            currentState = AIStates.wander;
+        }
+        else if (target.gameObject.GetComponent<Pawn>().isDead)
+        {
+            currentState = AIStates.wander;
+        }
+        else if (distanceToTargetActual >= distanceToTargetMin)
         {
             currentState = AIStates.chase;
         }
@@ -141,7 +174,7 @@ public class AIController : MonoBehaviour
         {
             if (target != null)
             {
-                movementHandler(target.position); 
+                movementHandler(target.position);
             }
             shootHandler();
         }
@@ -150,7 +183,15 @@ public class AIController : MonoBehaviour
     // shoot state: Stand still and shoot at player
     void stateShoot()
     {
-        if (distanceToTargetActual >= distanceToTargetMax && pawn.canSeeTarget(target))
+        if (target == null)
+        {
+            currentState = AIStates.wander;
+        }
+        else if (target.gameObject.GetComponent<Pawn>().isDead)
+        {
+            currentState = AIStates.wander;
+        }
+        else if (distanceToTargetActual >= distanceToTargetMax && pawn.canSeeTarget(target))
         {
             currentState = AIStates.chaseAndShoot;
         }

@@ -27,8 +27,13 @@ public class ActorSpawner : MonoBehaviour
     /// </summary>
     protected virtual void spawnActor()
     {
+        GameObject newObject;
         int objectToSpawn = Random.Range(0, actorToSpawn.Count);
-        Instantiate(actorToSpawn[objectToSpawn], tf.position, tf.rotation);
+        newObject = Instantiate(actorToSpawn[objectToSpawn], tf.position, tf.rotation);
+        if (newObject.GetComponent<AIController>() != null)
+        {
+            newObject.GetComponent<AIController>().spawnPosition = this.transform.position;
+        }
     }
 
     /// <summary>
