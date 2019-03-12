@@ -2860,13 +2860,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1960012580461128}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec37b38493f9c9b4b8aec0bdc21bb744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jointsMesh: {fileID: 137743401501993424}
   surfaceMesh: {fileID: 137511595229346958}
+  dissolveJointMat:
+  - {fileID: 2100000, guid: 40a23f442d82a424aa866e9026b79a45, type: 2}
+  dissolveSurfaceMat:
+  - {fileID: 2100000, guid: aa97f69ca4c33a940860502fc7d080a0, type: 2}
 --- !u!114 &114027378279715708
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3130,7 +3134,7 @@ MonoBehaviour:
   colliderChangeRate: 1
   rotationSpeed: 360
   isDead: 0
-  timeToWaitForDestroy: 5
+  timeToWaitForDestroy: 4
   dissolver: {fileID: 0}
 --- !u!114 &114150158443508108
 MonoBehaviour:

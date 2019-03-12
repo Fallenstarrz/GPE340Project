@@ -2453,13 +2453,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000697963815194}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec37b38493f9c9b4b8aec0bdc21bb744, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   jointsMesh: {fileID: 137547917717618366}
   surfaceMesh: {fileID: 137254751835764040}
+  dissolveJointMat:
+  - {fileID: 2100000, guid: e1cfe6c0caedaa641841359059a15939, type: 2}
+  dissolveSurfaceMat:
+  - {fileID: 2100000, guid: 0d5631255874312468b5a39cbc98a964, type: 2}
 --- !u!114 &114382930260726506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2609,7 +2613,7 @@ MonoBehaviour:
   colliderChangeRate: 1
   rotationSpeed: 360
   isDead: 0
-  timeToWaitForDestroy: 7
+  timeToWaitForDestroy: 4
   dissolver: {fileID: 0}
   fieldOfView: 90
 --- !u!114 &114865189341573422
@@ -2627,6 +2631,9 @@ MonoBehaviour:
   target: {fileID: 0}
   distanceToTargetMin: 8
   distanceToTargetMax: 4
+  spawnPosition: {x: 0, y: 0, z: 0}
+  closeEnough: 3
+  distanceToWander: 7
   currentState: 0
 --- !u!135 &135799963600576866
 SphereCollider:
