@@ -9,9 +9,10 @@ public class ActorSpawner_Player : ActorSpawner
     /// </summary>
     protected override void spawnActor()
     {
-        if (GameManager.instance.spawnedPlayer == null)
+        GameManager.instance.gameOver();
+        if (GameManager.instance.isGameOver == false && GameManager.instance.spawnedPlayer == null)
         {
-            base.spawnActor();
+                base.spawnActor();
         }
     }
 

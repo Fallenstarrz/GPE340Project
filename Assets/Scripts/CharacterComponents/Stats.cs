@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Stats : MonoBehaviour
 {
@@ -30,6 +31,9 @@ public class Stats : MonoBehaviour
     public float shieldRegenDelayCurrent;
     public float shieldRegenDelayMax;
     public Image shieldRegenFill;
+
+    [Header("Lives")]
+    public TextMeshProUGUI lives;
 
     [Header("Pistol")]
     public int pistolAmmoMax;
@@ -76,20 +80,25 @@ public class Stats : MonoBehaviour
         rifleAmmoCurrent = rifleAmmoMax/2;
 
         inventory[0] = startingWeapon;
+        inventoryUIUpdate();
 	}
 
     private void Update()
     {
-        // Regens
-        regenStamina();
-        regenShields();
+        if (GameManager.instance.isPaused == false)
+        {
+            // Regens
+            regenStamina();
+            regenShields();
 
-        // UI Updates
-        healthUIUpdate();
-        staminaUIUpdate();
-        shieldUIUpdate();
-        staminaUIRegenUpdate();
-        shieldUIRegenUpdate();
+            // UI Updates
+            healthUIUpdate();
+            staminaUIUpdate();
+            shieldUIUpdate();
+            staminaUIRegenUpdate();
+            shieldUIRegenUpdate();
+            livesUIUpdate();
+        }
     }
 
     /// <summary>
@@ -168,6 +177,15 @@ public class Stats : MonoBehaviour
         }
     }
 
+    // Update lives UI
+    private void livesUIUpdate()
+    {
+        if (lives != null)
+        {
+            lives.text = GameManager.instance.playerLivesCurrent.ToString(); 
+        }
+    }
+
     // Update health UI
     void healthUIUpdate()
     {
@@ -210,6 +228,24 @@ public class Stats : MonoBehaviour
         if (shieldRegenFill != null)
         {
             shieldRegenFill.fillAmount = 1 - (shieldRegenDelayCurrent / shieldRegenDelayMax);
+        }
+    }
+
+    // Update inventory slots in the UI
+    public void inventoryUIUpdate()
+    {
+        for (int i = 0; i < inventory.Length; i++)
+        {
+            Image weaponSlot = GameManager.instance.headsUpDisplay.weaponSlots[i];
+            if (inventory[i] != null)
+            {
+                weaponSlot.gameObject.SetActive(true);
+                weaponSlot.sprite = inventory[i].weaponSprite;
+            }
+            else
+            {
+                weaponSlot.gameObject.SetActive(false);
+            }
         }
     }
 }

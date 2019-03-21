@@ -40,22 +40,25 @@ public class ItemSpawner : MonoBehaviour
     /// </summary>
 	void Update ()
     {
-        if (spawnedObject == null)
+        if (GameManager.instance.isPaused == false)
         {
-            if (spawnTimeCurrent >= 0)
+            if (spawnedObject == null)
             {
-                spawnTimeCurrent -= Time.deltaTime;
+                if (spawnTimeCurrent >= 0)
+                {
+                    spawnTimeCurrent -= Time.deltaTime;
+                }
             }
-        }
-        // if the spawn time is less than or equal to 0, spawn a pickup
-        if (spawnTimeCurrent <= 0)
-        {
-            if (objectToSpawn != null)
+            // if the spawn time is less than or equal to 0, spawn a pickup
+            if (spawnTimeCurrent <= 0)
             {
-                spawnTimeCurrent = spawnTimeMax;
-                spawnedObject = Instantiate(objectToSpawn, tf.position, tf.rotation);
-                pickObjectToSpawn();
-            }
+                if (objectToSpawn != null)
+                {
+                    spawnTimeCurrent = spawnTimeMax;
+                    spawnedObject = Instantiate(objectToSpawn, tf.position, tf.rotation);
+                    pickObjectToSpawn();
+                }
+            } 
         }
     }
 

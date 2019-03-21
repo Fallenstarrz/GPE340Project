@@ -1,9 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [Header("UI Info")]
+    [SerializeField]
+    public Sprite weaponSprite;
+
     [Header("IK Information")]
     public Transform rightHandPoint;
     public Transform leftHandPoint;
@@ -58,9 +63,12 @@ public abstract class Weapon : MonoBehaviour
     /// </summary>
 	void Update ()
     {
-        if (shootCooldownCurrent >= 0)
+        if (GameManager.instance.isPaused == false)
         {
-            shootCooldownCurrent -= Time.deltaTime;
+            if (shootCooldownCurrent >= 0)
+            {
+                shootCooldownCurrent -= Time.deltaTime;
+            } 
         }
 	}
     /// <summary>

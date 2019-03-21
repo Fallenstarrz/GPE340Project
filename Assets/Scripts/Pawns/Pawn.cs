@@ -63,9 +63,7 @@ public abstract class Pawn : MonoBehaviour
     public bool isDead;
     public float timeToWaitForDestroy;
     public Dissolver dissolver;
-
-    // Use this for initialization
-    protected virtual void Start()
+    private void Awake()
     {
         anim = GetComponent<Animator>();
         tf = GetComponent<Transform>();
@@ -73,13 +71,19 @@ public abstract class Pawn : MonoBehaviour
         stats = GetComponent<Stats>();
         ragdoll = GetComponent<Ragdoll>();
         dissolver = GetComponent<Dissolver>();
-
+    }
+    // Use this for initialization
+    protected virtual void Start()
+    {
         equipWeapon(stats.inventory[0]);
     }
 
     protected void Update()
     {
-        checkFalling();
+        if (GameManager.instance.isPaused == false)
+        {
+            checkFalling(); 
+        }
     }
 
     /// <summary>

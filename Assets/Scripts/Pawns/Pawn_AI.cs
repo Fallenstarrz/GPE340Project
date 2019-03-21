@@ -123,7 +123,7 @@ public class Pawn_AI : Pawn
     /// </summary>
     private void OnAnimatorMove()
     {
-        if (anim != null)
+        if (anim != null && agent != null)
         {
             agent.velocity = anim.velocity;  
         }

@@ -26,13 +26,16 @@ public class CameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        moveCamera();
-        if (target == null)
+        if (GameManager.instance.isPaused == false)
         {
-            if (GameManager.instance.spawnedPlayer != null)
+            moveCamera();
+            if (target == null)
             {
-                target = GameManager.instance.spawnedPlayer.gameObject.transform; 
-            }
+                if (GameManager.instance.spawnedPlayer != null)
+                {
+                    target = GameManager.instance.spawnedPlayer.gameObject.transform;
+                }
+            } 
         }
 	}
     /// <summary>

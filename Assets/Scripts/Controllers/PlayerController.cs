@@ -16,23 +16,27 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (pawn == null)
+        if (GameManager.instance.isPaused == false)
         {
-            if (GameManager.instance.spawnedPlayer != null)
+            if (pawn == null)
             {
-                pawn = GameManager.instance.spawnedPlayer.GetComponent<Pawn>(); 
+                if (GameManager.instance.spawnedPlayer != null)
+                {
+                    pawn = GameManager.instance.spawnedPlayer.GetComponent<Pawn>();
+                }
             }
+            // Call methods on update
+            else if (!pawn.isDead)
+            {
+                movementHandler();
+                rotationHandler();
+                sprintHandler();
+                crouchHandler();
+                switchWeapons();
+                shootHandler();
+            } 
         }
-        // Call methods on update
-        else if (!pawn.isDead)
-        {
-            movementHandler();
-            rotationHandler();
-            sprintHandler();
-            crouchHandler();
-            switchWeapons();
-            shootHandler();
-        }
+        pauseHandler();
     }
 
     /// <summary>
@@ -158,6 +162,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("UnequipAll"))
         {
             pawn.unequipWeapon(pawn.stats.weaponEquipped);
+        }
+    }
+
+    private static void pauseHandler()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.pauseGame();
         }
     }
 }

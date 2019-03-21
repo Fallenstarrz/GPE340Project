@@ -44,24 +44,27 @@ public class AIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target != null)
+        if (GameManager.instance.isPaused == false)
         {
-            distanceToTargetActual = Vector3.Distance(pawn.tf.position, target.position);
+            if (target != null)
+            {
+                distanceToTargetActual = Vector3.Distance(pawn.tf.position, target.position);
+            }
+            else
+            {
+                acquireTarget();
+            }
+
+            // State manager
+            switchStates();
+            stateDead();
+
+            // Weapon call functions
+            // Still need to come up with a way to manage weapons on AIs
+            switchWeapons();
+
+            pawn.canSeeTarget(target); 
         }
-        else
-        {
-            acquireTarget();
-        }
-
-        // State manager
-        switchStates();
-        stateDead();
-
-        // Weapon call functions
-        // Still need to come up with a way to manage weapons on AIs
-        switchWeapons();
-
-        pawn.canSeeTarget(target);
     }
 
     // Set AI states

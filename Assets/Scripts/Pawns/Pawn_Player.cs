@@ -7,6 +7,12 @@ public class Pawn_Player : Pawn
     protected override void Start()
     {
         GameManager.instance.spawnedPlayer = this.gameObject;
+        stats.healthFill = GameManager.instance.headsUpDisplay.healthBar;
+        stats.shieldFill = GameManager.instance.headsUpDisplay.shieldBar;
+        stats.staminaFill = GameManager.instance.headsUpDisplay.staminaBar;
+        stats.shieldRegenFill = GameManager.instance.headsUpDisplay.shieldRechargeBar;
+        stats.staminaRegenFill = GameManager.instance.headsUpDisplay.staminaRechargeBar;
+        stats.lives = GameManager.instance.headsUpDisplay.currentLives;
         base.Start();
     }
     /// <summary>
@@ -109,6 +115,7 @@ public class Pawn_Player : Pawn
     /// </summary>
     public override void die()
     {
+        GameManager.instance.reducePlayerLives();
         base.die();
     }
 }

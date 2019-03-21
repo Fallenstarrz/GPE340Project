@@ -43,6 +43,7 @@ public class Pickup_Weapon : Pickup
             {
                 // add to inventory
                 stats.inventory[i] = weapon;
+                stats.inventoryUIUpdate();
                 weapon.addAmmo(stats);
                 break;
             }

@@ -23,15 +23,18 @@ public class Dissolver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dissolveAmount <= 1.2)
+        if (GameManager.instance.isPaused == false)
         {
-            dissolveAmount += (Time.deltaTime / 2);
-            dissolveJointMat[0].SetFloat("Vector1_2A22A5F7", dissolveAmount);
-            dissolveSurfaceMat[0].SetFloat("Vector1_2A22A5F7", dissolveAmount); 
-        }
-        else
-        {
-            pawn.deleteObject();
+            if (dissolveAmount <= 1.2)
+            {
+                dissolveAmount += (Time.deltaTime / 2);
+                dissolveJointMat[0].SetFloat("Vector1_2A22A5F7", dissolveAmount);
+                dissolveSurfaceMat[0].SetFloat("Vector1_2A22A5F7", dissolveAmount);
+            }
+            else
+            {
+                pawn.deleteObject();
+            } 
         }
     }
 }

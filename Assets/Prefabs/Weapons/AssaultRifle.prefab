@@ -22,7 +22,7 @@ GameObject:
   m_Layer: 0
   m_Name: LeftHandPosition
   m_TagString: Untagged
-  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37,7 +37,7 @@ GameObject:
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Untagged
-  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -88,7 +88,7 @@ GameObject:
   m_Layer: 0
   m_Name: RightHandPosition
   m_TagString: Untagged
-  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -268,6 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8008643ec73ccd642982726c212c5830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 21300000, guid: 3e3b0924f7cd2cf4c8e1205e3e2f9044, type: 3}
   rightHandPoint: {fileID: 4162866389724014}
   leftHandPoint: {fileID: 4596964332942420}
   ammoToAdd: 50
@@ -276,7 +277,7 @@ MonoBehaviour:
   shootCooldownMax: 0.15
   damage: 10
   bulletSpread: 3
-  bulletSpeed: 50
+  bulletSpeed: 35
   stopOnCollision: 1
   explosionRadius: 0
   explosionForce: 0

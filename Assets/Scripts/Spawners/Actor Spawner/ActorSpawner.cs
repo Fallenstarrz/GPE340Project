@@ -19,7 +19,10 @@ public class ActorSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameManager.instance.isPaused == false)
+        {
 
+        }
     }
 
     /// <summary>

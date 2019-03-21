@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dad1428736ebfb94aa8bdaefa78c664b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponSprite: {fileID: 21300000, guid: 3e652a597824bd44d91fd93f87e3857d, type: 3}
   rightHandPoint: {fileID: 4204723719846764}
   leftHandPoint: {fileID: 4255360398676644}
   ammoToAdd: 30
@@ -203,7 +204,7 @@ MonoBehaviour:
   shootCooldownMax: 0.5
   damage: 10
   bulletSpread: 1
-  bulletSpeed: 50
+  bulletSpeed: 35
   stopOnCollision: 1
   explosionRadius: 0
   explosionForce: 0
