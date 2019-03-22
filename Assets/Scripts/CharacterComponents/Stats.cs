@@ -60,13 +60,13 @@ public class Stats : MonoBehaviour
     public Weapon startingWeapon;
     public Weapon weaponEquipped;
     public Weapon[] inventory = new Weapon[5];
-    
+
     // TODO: Buffs: NYI, WIP. Milestone 4 goal
     //[Header("Buffs")]
     //public List<Pickup> buffs = new List<Pickup>();
 
     // Set default stats on spawned
-    void Awake ()
+    void Awake()
     {
         pawn = GetComponent<Pawn>();
 
@@ -74,14 +74,14 @@ public class Stats : MonoBehaviour
         staminaCurrent = staminaMax;
         shieldCurrent = shieldMax;
         pistolAmmoCurrent = pistolAmmoMax;
-        sniperAmmoCurrent = sniperAmmoMax/2;
-        machineGunAmmoCurrent = machineGunAmmoMax/2;
-        RocketLauncherAmmoCurrent = RocketLauncherAmmoMax/2;
-        rifleAmmoCurrent = rifleAmmoMax/2;
+        sniperAmmoCurrent = sniperAmmoMax / 2;
+        machineGunAmmoCurrent = machineGunAmmoMax / 2;
+        RocketLauncherAmmoCurrent = RocketLauncherAmmoMax / 2;
+        rifleAmmoCurrent = rifleAmmoMax / 2;
 
         inventory[0] = startingWeapon;
         inventoryUIUpdate();
-	}
+    }
 
     private void Update()
     {
@@ -182,7 +182,7 @@ public class Stats : MonoBehaviour
     {
         if (lives != null)
         {
-            lives.text = GameManager.instance.playerLivesCurrent.ToString(); 
+            lives.text = GameManager.instance.playerLivesCurrent.ToString();
         }
     }
 
@@ -231,20 +231,48 @@ public class Stats : MonoBehaviour
         }
     }
 
-    // Update inventory slots in the UI
+    //// Update inventory slots in the UI
+    //public void inventoryUIUpdate()
+    //{
+    //    for (int i = 0; i < inventory.Length; i++)
+    //    {
+    //        Image weaponSlot = GameManager.instance.headsUpDisplay.weaponSlots[i];
+    //        if (inventory[i] != null)
+    //        {
+    //            weaponSlot.gameObject.SetActive(true);
+    //            weaponSlot.sprite = inventory[i].weaponSprite;
+    //        }
+    //        else
+    //        {
+    //            weaponSlot.gameObject.SetActive(false);
+    //        }
+    //    }
+    //}
+
     public void inventoryUIUpdate()
     {
+        HUD display = GameManager.instance.headsUpDisplay;
+        int j = 1;
         for (int i = 0; i < inventory.Length; i++)
         {
-            Image weaponSlot = GameManager.instance.headsUpDisplay.weaponSlots[i];
             if (inventory[i] != null)
             {
-                weaponSlot.gameObject.SetActive(true);
-                weaponSlot.sprite = inventory[i].weaponSprite;
+                if (pawn.stats.weaponEquipped == inventory[i])
+                {
+                    Debug.Log("Weapon active attached");
+                    display.weaponSlots[0].sprite = weaponEquipped.weaponSprite;
+                    display.weaponSlots[0].gameObject.SetActive(true);
+                }
+                else
+                {
+                    display.weaponSlots[j].sprite = inventory[i].weaponSprite;
+                    display.weaponSlots[j].gameObject.SetActive(true);
+                    j++;
+                } 
             }
             else
             {
-                weaponSlot.gameObject.SetActive(false);
+                display.weaponSlots[i].gameObject.SetActive(false);
             }
         }
     }

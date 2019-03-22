@@ -215,6 +215,7 @@ public abstract class Pawn : MonoBehaviour
             leftHandPoint = stats.weaponEquipped.leftHandPoint;
 
             stats.weaponEquipped.gameObject.layer = gameObject.layer;
+            stats.inventoryUIUpdate();
         }
     }
 
