@@ -80,7 +80,6 @@ public class Stats : MonoBehaviour
         rifleAmmoCurrent = rifleAmmoMax / 2;
 
         inventory[0] = startingWeapon;
-        inventoryUIUpdate();
     }
 
     private void Update()
@@ -231,24 +230,15 @@ public class Stats : MonoBehaviour
         }
     }
 
-    //// Update inventory slots in the UI
-    //public void inventoryUIUpdate()
-    //{
-    //    for (int i = 0; i < inventory.Length; i++)
-    //    {
-    //        Image weaponSlot = GameManager.instance.headsUpDisplay.weaponSlots[i];
-    //        if (inventory[i] != null)
-    //        {
-    //            weaponSlot.gameObject.SetActive(true);
-    //            weaponSlot.sprite = inventory[i].weaponSprite;
-    //        }
-    //        else
-    //        {
-    //            weaponSlot.gameObject.SetActive(false);
-    //        }
-    //    }
-    //}
-
+    /// <summary>
+    /// Update the inventory when new items to the inventory or when actor is spawned
+    /// int j holds positions of our secondary set of arrays, this is used for performance, so we don't need to do a second loop when we don't need to move x and y in a 2D array
+    /// loop through inventory
+    /// if the inventory slot is not null then check if current slot iteration is the active weapon
+    ///     if it is the active weapon then set 0 slot on HUD to this and set the keybind to the inventory slot iteration
+    ///     if the active weapon is not then set hud slot j to this image and set the keybind the the inventory slot iteration
+    /// if the inventory slot is null then deactivate the slot, so we don't clutter the UI
+    /// </summary>
     public void inventoryUIUpdate()
     {
         HUD display = GameManager.instance.headsUpDisplay;
@@ -257,18 +247,23 @@ public class Stats : MonoBehaviour
         {
             if (inventory[i] != null)
             {
-                if (pawn.stats.weaponEquipped == inventory[i])
+                if (weaponEquipped != null)
                 {
-                    Debug.Log("Weapon active attached");
-                    display.weaponSlots[0].sprite = weaponEquipped.weaponSprite;
-                    display.weaponSlots[0].gameObject.SetActive(true);
+                    // Null Reference Thrown Here... Find out why..?
+                    if (weaponEquipped.GetType() == inventory[i].GetType())
+                    {
+                        display.weaponSlots[0].slotImage.sprite = weaponEquipped.weaponSprite;
+                        display.weaponSlots[0].keybindNumber.text = (i+1).ToString();
+                        display.weaponSlots[0].gameObject.SetActive(true);
+                    }
+                    else
+                    {
+                        display.weaponSlots[j].slotImage.sprite = inventory[i].weaponSprite;
+                        display.weaponSlots[j].keybindNumber.text = (i+1).ToString();
+                        display.weaponSlots[j].gameObject.SetActive(true);
+                        j++;
+                    } 
                 }
-                else
-                {
-                    display.weaponSlots[j].sprite = inventory[i].weaponSprite;
-                    display.weaponSlots[j].gameObject.SetActive(true);
-                    j++;
-                } 
             }
             else
             {

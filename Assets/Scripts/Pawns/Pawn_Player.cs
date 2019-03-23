@@ -13,6 +13,7 @@ public class Pawn_Player : Pawn
         stats.shieldRegenFill = GameManager.instance.headsUpDisplay.shieldRechargeBar;
         stats.staminaRegenFill = GameManager.instance.headsUpDisplay.staminaRechargeBar;
         stats.lives = GameManager.instance.headsUpDisplay.currentLives;
+        stats.inventoryUIUpdate();
         base.Start();
     }
     /// <summary>
@@ -99,6 +100,15 @@ public class Pawn_Player : Pawn
     public override void equipWeapon(Weapon weapon)
     {
         base.equipWeapon(weapon);
+    }
+
+    /// <summary>
+    /// Update inventory UI for player only
+    /// </summary>
+    protected override void manageInventory()
+    {
+        stats.inventoryUIUpdate();
+        base.manageInventory();
     }
 
     /// <summary>

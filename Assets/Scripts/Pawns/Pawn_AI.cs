@@ -72,6 +72,14 @@ public class Pawn_AI : Pawn
         base.equipWeapon(weapon);
     }
     /// <summary>
+    /// Do nothing override function
+    /// </summary>
+    protected override void manageInventory()
+    {
+        // Do nothing
+        base.manageInventory();
+    }
+    /// <summary>
     /// unequip a weapon
     /// </summary>
     /// <param name="weapon"></param>

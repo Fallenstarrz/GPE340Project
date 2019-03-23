@@ -14,5 +14,5 @@ public class HUD : MonoBehaviour
     public TextMeshProUGUI currentLives;
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
-    public Image[] weaponSlots = new Image[5];
+    public InventorySlot[] weaponSlots = new InventorySlot[5];
 }
