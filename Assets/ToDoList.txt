@@ -18,7 +18,7 @@ Extras:
 
 Milestone 5:
 	Main Menu
-	Settings Menu
+	Settings Menu (also at pause)
 	Volume Control
 	Audio (Triggered)
 	Audio (Background / Environmental)
