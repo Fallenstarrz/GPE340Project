@@ -1,0 +1,68 @@
+Extras:
+	Minimap
+	Enemy Drops
+	Weapons Reload
+	Weapons Active Ammo
+	Wave Spawns (Difficulty Formula)
+	Enemy World UI Billboard
+	Loading Screens
+	Credits
+	AI Weapon Stuff
+	Gun screen shake
+	Bullet Line Trace
+	Gun screen flash
+	Different Bullets
+	Change to MachineGun to FlameThrower
+	Camera Fader on walls
+	Slow time
+
+Milestone 5:
+	Main Menu
+	Settings Menu
+	Volume Control
+	Audio (Triggered)
+	Audio (Background / Environmental)
+	Particle Effects
+	Lighting
+	Runs Smoothly at 60fps
+	Build Version
+	Added To Portfolio
+
+Options Functionality
+	Brackeys Tutorial
+	Keybinds ??
+
+Sounds:
+	Hit Wall
+	Hit Shield
+	Hit Health
+	Shoot Bullet
+	Shoot Flamethrower
+	Shoot Rocket
+	Explosion
+	Music
+	Scifi Ambiance
+	Footsteps
+	Robot chimes
+
+Particles:
+	Rocket Explodion
+	Hit Health
+	Hit Shield
+	Hit wall smoke/burn/explosion
+	Muzzle Flash
+	Footstep smoke
+
+Shaders:
+	Shield Hit
+
+THIS MILESTONE::
+	Main Menu
+	Ammo Displayed for Active
+	Minimap
+	Enemy Drops
+	Weapon Reloading
+	Waves Spawning (& Difficulty formula)
+	Enemy World UI Billboarding
+	Loading Screen
+	Credits

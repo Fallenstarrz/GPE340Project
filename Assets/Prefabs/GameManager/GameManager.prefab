@@ -9,30 +9,30 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1343979913054380}
+  m_RootGameObject: {fileID: 1006796563927056}
   m_IsPrefabAsset: 1
---- !u!1 &1343979913054380
+--- !u!1 &1006796563927056
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4861333033453694}
-  - component: {fileID: 114480424454212232}
+  - component: {fileID: 4505175327281698}
+  - component: {fileID: 114297701919914342}
   m_Layer: 0
-  m_Name: PlayerController
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4861333033453694
+--- !u!4 &4505175327281698
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1343979913054380}
+  m_GameObject: {fileID: 1006796563927056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,15 +40,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114480424454212232
+--- !u!114 &114297701919914342
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1343979913054380}
+  m_GameObject: {fileID: 1006796563927056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d072aeeaff6a81b4b81d9792fc20fc62, type: 3}
+  m_Script: {fileID: 11500000, guid: c2fa1e1177e30e942826334e06c13c24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pawn: {fileID: 0}
+  waveNumber: 0
+  currentEnemiesSpawned: 0
+  maxEnemiesSpawned: 4
+  playerLivesCurrent: 0
+  playerLivesMax: 3
+  spawnedPlayer: {fileID: 0}
+  headsUpDisplay: {fileID: 0}
+  isGameOver: 0
+  isPaused: 0

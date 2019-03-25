@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     public bool isGameOver;
     public bool isPaused;
 
+    public SceneSwitcher sceneSwitcher;
+
     // Use this for initialization
     void Awake()
     {
