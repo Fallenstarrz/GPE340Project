@@ -2550,6 +2550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cdc8673249bb344ba08e17ab0ab6ea7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pawn: {fileID: 0}
   healthMax: 20
   healthCurrent: 0
   healthFill: {fileID: 114033210575142564}
@@ -2568,6 +2569,7 @@ MonoBehaviour:
   shieldRegenDelayCurrent: 0
   shieldRegenDelayMax: 5
   shieldRegenFill: {fileID: 0}
+  lives: {fileID: 0}
   pistolAmmoMax: 100
   pistolAmmoCurrent: 0
   sniperAmmoMax: 25
@@ -2613,7 +2615,7 @@ MonoBehaviour:
   colliderChangeRate: 1
   rotationSpeed: 360
   isDead: 0
-  timeToWaitForDestroy: 4
+  timeToWaitForDestroy: 2
   dissolver: {fileID: 0}
   fieldOfView: 90
 --- !u!114 &114865189341573422

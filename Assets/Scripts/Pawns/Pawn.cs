@@ -220,7 +220,7 @@ public abstract class Pawn : MonoBehaviour
     }
 
     // Used to update inventory UI on player only
-    protected virtual void manageInventory()
+    public virtual void manageInventory()
     {
 
     }

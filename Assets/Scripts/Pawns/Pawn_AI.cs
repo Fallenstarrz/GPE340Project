@@ -74,7 +74,7 @@ public class Pawn_AI : Pawn
     /// <summary>
     /// Do nothing override function
     /// </summary>
-    protected override void manageInventory()
+    public override void manageInventory()
     {
         // Do nothing
         base.manageInventory();

@@ -6,7 +6,7 @@ using TMPro;
 
 public class Stats : MonoBehaviour
 {
-    private Pawn pawn;
+    public Pawn pawn;
 
     [Header("Health")]
     public float healthMax;
