@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
 
     public void returnToMainMenu()
     {
-        // Load main menu scene
+        sceneSwitcher.switchScene("MainMenu");
     }
 }
 
