@@ -1,20 +1,21 @@
 Extras:
-	Minimap
-	Enemy Drops
-	Weapons Reload
-	Weapons Active Ammo
-	Wave Spawns (Difficulty Formula)
-	Enemy World UI Billboard
-	Loading Screens
-	Credits
-	AI Weapon Stuff
-	Gun screen shake
-	Bullet Line Trace
-	Gun screen flash
-	Different Bullets
-	Change to MachineGun to FlameThrower
-	Camera Fader on walls
-	Slow time
+	1 Minimap
+	1 Enemy Drops
+	1 Weapons Active Ammo
+	1 Wave Spawns (Difficulty Formula)
+	1 Credits
+	1 Slow time every random number of kills
+	1 Gun screen shake
+	1 Bullet Line Trace
+	1 Different Bullets
+	
+	2 Loading Screens
+	2 Change to MachineGun to FlameThrower or shotgun..?
+	
+	? Camera Fader on walls
+	? Weapons Reload
+	? Gun screen flash
+	*?* AI Weapon Stuff * Important needs changes, but idk what...
 
 Milestone 5:
 	X	Main Menu
