@@ -1,0 +1,14 @@
+Audio
+	Insert Audio Clip
+	Choose Sound Group for volume control
+Levels
+	In Main Menu
+	Child the level Prefab into the level switcher object
+	Now drag and drop the level object you just made into Level Select Switcher list
+	Now change the image on the level prefab
+	Finally go into the Play Button object of your level Prefab object
+	Create a new on click event in your level prefab
+	Drag the Scene Switcher Object into the play button on click event
+	Select the function in the scene switcher called switchScenes
+	Pass in your EXACT scene name as the parameter
+	Press Play and test.

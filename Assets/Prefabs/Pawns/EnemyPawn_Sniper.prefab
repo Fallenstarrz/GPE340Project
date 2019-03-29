@@ -831,6 +831,7 @@ GameObject:
   - component: {fileID: 223608988679401598}
   - component: {fileID: 114142883400219256}
   - component: {fileID: 114642184196193250}
+  - component: {fileID: 114562838549171988}
   m_Layer: 5
   m_Name: OverheadUI
   m_TagString: Untagged
@@ -2579,6 +2580,18 @@ MonoBehaviour:
   - {fileID: 2100000, guid: e1cfe6c0caedaa641841359059a15939, type: 2}
   dissolveSurfaceMat:
   - {fileID: 2100000, guid: 0d5631255874312468b5a39cbc98a964, type: 2}
+--- !u!114 &114562838549171988
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1698792912362228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ba654d48eb5b354da06fd286f344e6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myRotation: {x: 45, y: 0, z: 0}
 --- !u!114 &114568668959348644
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -17,16 +17,16 @@ Extras:
 	Slow time
 
 Milestone 5:
-	Main Menu
-	Settings Menu (also at pause)
-	Volume Control
-	Audio (Triggered)
-	Audio (Background / Environmental)
-	Particle Effects
-	Lighting
-	Runs Smoothly at 60fps
-	Build Version
-	Added To Portfolio
+	X	Main Menu
+		Settings Menu (also at pause)
+	X	Volume Control
+		Audio (Triggered)
+		Audio (Background / Environmental)
+		Particle Effects
+		Lighting
+		Runs Smoothly at 60fps
+		Build Version
+		Added To Portfolio
 
 Options Functionality
 	Brackeys Tutorial
