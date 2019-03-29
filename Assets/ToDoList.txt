@@ -56,14 +56,3 @@ Particles:
 
 Shaders:
 	Shield Hit
-
-THIS MILESTONE::
-	Main Menu
-	Ammo Displayed for Active
-	Minimap
-	Enemy Drops
-	Weapon Reloading
-	Waves Spawning (& Difficulty formula)
-	Enemy World UI Billboarding
-	Loading Screen
-	Credits
