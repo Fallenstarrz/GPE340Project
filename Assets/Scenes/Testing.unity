@@ -101,7 +101,7 @@ NavMeshSettings:
     agentRadius: 0.2
     agentHeight: 2
     agentSlope: 45
-    agentClimb: 1
+    agentClimb: 0.25
     ledgeDropHeight: 4
     maxJumpAcrossDistance: 0
     minRegionArea: 3
@@ -112,7 +112,7 @@ NavMeshSettings:
     accuratePlacement: 1
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 45a959bc07270b446906558815e9bf46, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 26e3406dec7b513459e059c83c3ac1f5, type: 2}
 --- !u!1 &6888525
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,6 +265,16 @@ Prefab:
         type: 2}
       propertyPath: m_BackGroundColor.a
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20247271413641128, guid: ff14b65e821f7c8479f4fae43b3419d3,
+        type: 2}
+      propertyPath: orthographic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20247271413641128, guid: ff14b65e821f7c8479f4fae43b3419d3,
+        type: 2}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff14b65e821f7c8479f4fae43b3419d3, type: 2}
