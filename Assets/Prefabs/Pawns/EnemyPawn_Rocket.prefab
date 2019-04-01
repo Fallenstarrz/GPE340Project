@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114865189341573422}
   - component: {fileID: 114568668959348644}
   - component: {fileID: 114133157382748434}
+  - component: {fileID: 114762035139087172}
   m_Layer: 10
   m_Name: EnemyPawn_Rocket
   m_TagString: Untagged
@@ -2593,6 +2594,39 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114762035139087172
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000697963815194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b4d68581bb0f2640a2612878b2ff964, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropTable:
+  - itemDrop: {fileID: 1995942615973134, guid: 1ee35e716d2737147807d7878153871e, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1395405621093546, guid: e8270a63754768048b084955a4d14cd6, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1941546166497340, guid: 5716fc3f5b6104a48a13f7928a632851, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1255127861089438, guid: 050c58c13cd4e7649a807d1ec78d7cb5, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1585665421940002, guid: 2fbeaf7e2aa6151468ed007349385839, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1749095121520898, guid: ea02c9f74416f134cacab15a638002b7, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1150562209207190, guid: fa002dfaf310d7048af089d603f86ad5, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 1193001277581558, guid: 4237890ce5208b843a0370d423608c2b, type: 2}
+    weight: 10
+  - itemDrop: {fileID: 0}
+    weight: 80
+  weapon:
+    itemDrop: {fileID: 1226918667290212, guid: 51f275c3882ef0e4fbf93ad0fe6bc5c9, type: 2}
+    weight: 1
 --- !u!114 &114779008278493338
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2633,6 +2667,7 @@ MonoBehaviour:
   isDead: 0
   timeToWaitForDestroy: 2
   dissolver: {fileID: 0}
+  numItemsToDrop: 0
   fieldOfView: 90
 --- !u!114 &114824498690201262
 MonoBehaviour:
