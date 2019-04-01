@@ -43,7 +43,11 @@ public abstract class Pickup : MonoBehaviour
     {
         if (other.GetComponent<Stats>() != null)
         {
-            onPickup(other.gameObject);
+            if (other.gameObject == GameManager.instance.spawnedPlayer)
+            {
+                onPickup(other.gameObject);
+                Debug.Log("Item picked up by: " + other.gameObject);
+            }
         }
     }
 

@@ -10,6 +10,9 @@ public class Pawn_AI : Pawn
 
     private Vector3 desiredVelocity;
 
+    private DropController dropController;
+    public int numItemsToDrop;
+
     [SerializeField]
     [Range(0,360)]
     private float fieldOfView;
@@ -18,6 +21,7 @@ public class Pawn_AI : Pawn
     protected override void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        dropController = GetComponent<DropController>();
         base.Start();
     }
 
@@ -143,6 +147,33 @@ public class Pawn_AI : Pawn
     public override void die()
     {
         GameManager.instance.currentEnemiesSpawned--;
+        dropItem();
+        dropWeapon();
         base.die();
+    }
+
+    private void dropItem()
+    {
+        int randNum = Random.Range(1, numItemsToDrop);
+        for (int i = 0; i < randNum; i++)
+        {
+            GameObject itemToSpawn = dropController.GetRandomItem();
+            if (itemToSpawn != null)
+            {
+                GameObject item = Instantiate(itemToSpawn, tf.position, tf.rotation);
+                addForceInRandomDirection(item);
+            }
+        }
+    }
+
+    private void dropWeapon()
+    {
+        GameObject weaponDrop = Instantiate(dropController.weapon.itemDrop, tf.position, tf.rotation);
+        addForceInRandomDirection(weaponDrop);
+    }
+
+    private void addForceInRandomDirection(GameObject itemToPropel)
+    {
+        // We left off here!
     }
 }
