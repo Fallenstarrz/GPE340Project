@@ -5,7 +5,6 @@ using UnityEngine;
 public class DropController : MonoBehaviour
 {
     public List<Drop> dropTable;
-    public Drop weapon;
 
     public GameObject GetRandomItem()
     {

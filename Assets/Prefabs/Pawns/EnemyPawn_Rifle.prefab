@@ -2603,10 +2603,9 @@ MonoBehaviour:
   - itemDrop: {fileID: 1193001277581558, guid: 4237890ce5208b843a0370d423608c2b, type: 2}
     weight: 10
   - itemDrop: {fileID: 0}
-    weight: 80
-  weapon:
-    itemDrop: {fileID: 1496310626236466, guid: 48acdd3ce2ed28a489bb91ef50e77594, type: 2}
-    weight: 1
+    weight: 90
+  - itemDrop: {fileID: 1496310626236466, guid: 48acdd3ce2ed28a489bb91ef50e77594, type: 2}
+    weight: 10
 --- !u!114 &114382930260726506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2760,8 +2759,10 @@ MonoBehaviour:
   isDead: 0
   timeToWaitForDestroy: 2
   dissolver: {fileID: 0}
-  numItemsToDrop: 0
+  dropController: {fileID: 0}
+  numItemsToDrop: 3
   itemCreationPoint: {fileID: 4737270650471834}
+  forceToAddToDrop: 2.5
   fieldOfView: 90
 --- !u!114 &114865189341573422
 MonoBehaviour:

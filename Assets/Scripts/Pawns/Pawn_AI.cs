@@ -9,13 +9,18 @@ public class Pawn_AI : Pawn
     private NavMeshAgent agent;
 
     private Vector3 desiredVelocity;
-
+    
+    [Header("Drop Variables")]
+    [SerializeField]
     private DropController dropController;
-    public int numItemsToDrop;
-
+    [SerializeField]
+    private int numItemsToDrop;
     [SerializeField]
     private Transform itemCreationPoint;
+    [SerializeField]
+    private float forceToAddToDrop;
 
+    [Header("View Angle")]
     [SerializeField]
     [Range(0,360)]
     private float fieldOfView;
@@ -151,10 +156,10 @@ public class Pawn_AI : Pawn
     {
         GameManager.instance.currentEnemiesSpawned--;
         dropItem();
-        dropWeapon();
         base.die();
     }
 
+    // Need to destroy after an amount of time. Also need to remove rigidbody and stop them from intercepting bullets
     private void dropItem()
     {
         int randNum = Random.Range(1, numItemsToDrop);
@@ -163,22 +168,17 @@ public class Pawn_AI : Pawn
             GameObject itemToSpawn = dropController.GetRandomItem();
             if (itemToSpawn != null)
             {
-                GameObject item = Instantiate(itemToSpawn, tf.position, tf.rotation);
+                GameObject item = Instantiate(itemToSpawn, itemCreationPoint.position, itemCreationPoint.rotation);
                 addForceInRandomDirection(item);
             }
         }
     }
 
-    private void dropWeapon()
-    {
-        GameObject weaponDrop = Instantiate(dropController.weapon.itemDrop, itemCreationPoint);
-        addForceInRandomDirection(weaponDrop);
-    }
-
     private void addForceInRandomDirection(GameObject itemToPropel)
     {
-        Vector2 randomPosition = (Random.insideUnitCircle) * 2;
-        Vector3 positionToPush = new Vector3(randomPosition.x, Mathf.Abs(randomPosition.y), randomPosition.x);
-        itemToPropel.GetComponent<Rigidbody>().AddForce(randomPosition);
+        tf.eulerAngles = new Vector3(tf.eulerAngles.x, Random.Range(0, 360), transform.eulerAngles.z);
+        Vector3 forceArea = tf.forward;
+        forceArea = new Vector3(forceArea.x, 1, forceArea.z);
+        itemToPropel.GetComponent<Rigidbody>().AddForce((forceArea * forceToAddToDrop), ForceMode.Impulse);
     }
 }
