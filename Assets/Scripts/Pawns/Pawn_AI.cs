@@ -174,6 +174,12 @@ public class Pawn_AI : Pawn
 
     private void addForceInRandomDirection(GameObject itemToPropel)
     {
-        // We left off here!
+        Vector3 randomPosition = absoluteValue(Random.insideUnitSphere);
+
+    }
+
+    private Vector3 absoluteValue(Vector3 myVector)
+    {
+        return (new Vector3(Mathf.Abs(myVector.x), Mathf.Abs(myVector.y), Mathf.Abs(myVector.z)));
     }
 }
