@@ -14,6 +14,9 @@ public class Pawn_AI : Pawn
     public int numItemsToDrop;
 
     [SerializeField]
+    private Transform itemCreationPoint;
+
+    [SerializeField]
     [Range(0,360)]
     private float fieldOfView;
 
@@ -168,18 +171,14 @@ public class Pawn_AI : Pawn
 
     private void dropWeapon()
     {
-        GameObject weaponDrop = Instantiate(dropController.weapon.itemDrop, tf.position, tf.rotation);
+        GameObject weaponDrop = Instantiate(dropController.weapon.itemDrop, itemCreationPoint);
         addForceInRandomDirection(weaponDrop);
     }
 
     private void addForceInRandomDirection(GameObject itemToPropel)
     {
-        Vector3 randomPosition = absoluteValue(Random.insideUnitSphere);
-
-    }
-
-    private Vector3 absoluteValue(Vector3 myVector)
-    {
-        return (new Vector3(Mathf.Abs(myVector.x), Mathf.Abs(myVector.y), Mathf.Abs(myVector.z)));
+        Vector2 randomPosition = (Random.insideUnitCircle) * 2;
+        Vector3 positionToPush = new Vector3(randomPosition.x, Mathf.Abs(randomPosition.y), randomPosition.x);
+        itemToPropel.GetComponent<Rigidbody>().AddForce(randomPosition);
     }
 }
