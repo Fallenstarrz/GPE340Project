@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 65564403381225636}
   - component: {fileID: 114877026247233144}
   - component: {fileID: 54747885212207274}
+  - component: {fileID: 114695362211723866}
   m_Layer: 0
   m_Name: ShieldRegenPickup
   m_TagString: Untagged
@@ -174,6 +175,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114695362211723866
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1150562209207190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81311343df93337468a0c06d535d179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestroy: 30
+  timeBeforeRemove: 1.5
 --- !u!114 &114877026247233144
 MonoBehaviour:
   m_ObjectHideFlags: 1

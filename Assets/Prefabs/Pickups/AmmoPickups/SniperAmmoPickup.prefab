@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114077293221740744}
   - component: {fileID: 65893794827930084}
   - component: {fileID: 54430182006719306}
+  - component: {fileID: 114215056969712266}
   m_Layer: 0
   m_Name: SniperAmmoPickup
   m_TagString: Untagged
@@ -188,3 +189,16 @@ MonoBehaviour:
   rotationSpeed: 180
   ammoAmountToAdd: 8
   typeOfAmmo: 4
+--- !u!114 &114215056969712266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585665421940002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81311343df93337468a0c06d535d179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestroy: 30
+  timeBeforeRemove: 1.5

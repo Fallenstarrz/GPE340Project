@@ -19,6 +19,7 @@ public class Pawn_AI : Pawn
     private Transform itemCreationPoint;
     [SerializeField]
     private float forceToAddToDrop;
+    DestroyAndRemoval postSpawnItemController;
 
     [Header("View Angle")]
     [SerializeField]
@@ -169,6 +170,8 @@ public class Pawn_AI : Pawn
             if (itemToSpawn != null)
             {
                 GameObject item = Instantiate(itemToSpawn, itemCreationPoint.position, itemCreationPoint.rotation);
+                postSpawnItemController = item.GetComponent<DestroyAndRemoval>();
+                postSpawnItemController.begin();
                 addForceInRandomDirection(item);
             }
         }

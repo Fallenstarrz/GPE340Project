@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114120119734094174}
   - component: {fileID: 65605799204364988}
   - component: {fileID: 54376378599032318}
+  - component: {fileID: 114866707108683018}
   m_Layer: 0
   m_Name: StaminaRatePickup
   m_TagString: Untagged
@@ -187,3 +188,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 180
   staminaRegenRateIncrease: 10
+--- !u!114 &114866707108683018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1193001277581558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81311343df93337468a0c06d535d179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestroy: 30
+  timeBeforeRemove: 1.5

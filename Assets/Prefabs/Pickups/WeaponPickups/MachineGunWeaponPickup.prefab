@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 65738281380487612}
   - component: {fileID: 114052041525646234}
   - component: {fileID: 54019425271710806}
+  - component: {fileID: 114308040456165700}
   m_Layer: 0
   m_Name: MachineGunWeaponPickup
   m_TagString: Untagged
@@ -187,3 +188,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 180
   weapon: {fileID: 114490107089067034, guid: 0ff4c396eb2ff0f48881df892b719b21, type: 2}
+--- !u!114 &114308040456165700
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1172836635077518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81311343df93337468a0c06d535d179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestroy: 30
+  timeBeforeRemove: 1.5

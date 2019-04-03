@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114342825515463408}
   - component: {fileID: 65464812618460928}
   - component: {fileID: 54125173844994952}
+  - component: {fileID: 114466409594146764}
   m_Layer: 0
   m_Name: Health Pickup
   m_TagString: Untagged
@@ -187,3 +188,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 180
   healAmount: 25
+--- !u!114 &114466409594146764
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749095121520898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81311343df93337468a0c06d535d179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestroy: 30
+  timeBeforeRemove: 1.5

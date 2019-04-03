@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114400084466391696}
   - component: {fileID: 65474889846912688}
   - component: {fileID: 54774189864401406}
+  - component: {fileID: 114834939196150742}
   m_Layer: 0
   m_Name: RocketLauncherWeaponPickup
   m_TagString: Untagged
@@ -187,3 +188,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 180
   weapon: {fileID: 114357056535878560, guid: 9eef4f95474801245b0ded81de1d10ca, type: 2}
+--- !u!114 &114834939196150742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226918667290212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81311343df93337468a0c06d535d179b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestroy: 30
+  timeBeforeRemove: 1.5
