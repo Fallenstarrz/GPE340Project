@@ -17,19 +17,18 @@ Extras:
 	*?* AI Weapon Stuff * Important needs changes, but idk what...
 
 Milestone 5:
-	X	Main Menu
-		Settings Menu (also at pause) ** Need to add video settings..!
+	X	Main Menu (Still need render texture for the background scene)
+	X	Settings Menu (also at pause)
 	X	Volume Control
 		Audio (Triggered)
 		Audio (Background / Environmental)
 		Particle Effects
-		Lighting
+	X	Lighting
 		Runs Smoothly at 60fps
 		Build Version
 		Added To Portfolio
 
 Options Functionality
-	Brackeys Tutorial
 	Keybinds ??
 
 Sounds:
