@@ -26,6 +26,8 @@ public class Projectile : MonoBehaviour
 
         gameObject.layer = weaponThatShot.gameObject.layer;
         propelBullet();
+
+        tf.rotation = Quaternion.Euler(0, tf.rotation.y, tf.rotation.z);
 	}
 	
 	// Update is called once per frame

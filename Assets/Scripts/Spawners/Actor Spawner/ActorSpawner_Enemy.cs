@@ -9,7 +9,7 @@ public class ActorSpawner_Enemy : ActorSpawner
     /// </summary>
     protected override void spawnActor()
     {
-        if (GameManager.instance.currentEnemiesSpawned <= GameManager.instance.maxEnemiesSpawned)
+        if (GameManager.instance.currentEnemiesSpawned < GameManager.instance.maxEnemiesSpawned)
         {
             GameManager.instance.currentEnemiesSpawned++;
             base.spawnActor();

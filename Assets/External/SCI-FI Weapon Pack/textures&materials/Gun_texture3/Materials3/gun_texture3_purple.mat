@@ -9,7 +9,7 @@ Material:
   m_Name: gun_texture3_purple
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ShaderKeywords: _EMISSION _NORMALMAP
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
@@ -107,5 +107,5 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.4140469, g: 0, b: 0.8455882, a: 1}
+    - _EmissionColor: {r: 0.83137256, g: 0, b: 1.6941177, a: 1}
     - _SpecColor: {r: 0.45588237, g: 0.45588237, b: 0.45588237, a: 1}

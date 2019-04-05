@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public bool isPaused;
 
     public SceneSwitcher sceneSwitcher;
+    public Settings settings;
 
     // Use this for initialization
     void Awake()
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        settings.loadSettings();
     }
 
     public void reducePlayerLives()

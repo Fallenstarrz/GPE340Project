@@ -9,7 +9,7 @@ public class ResolutionController : MonoBehaviour
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
