@@ -13,6 +13,8 @@ public class Pawn_Player : Pawn
         stats.shieldRegenFill = GameManager.instance.headsUpDisplay.shieldRechargeBar;
         stats.staminaRegenFill = GameManager.instance.headsUpDisplay.staminaRechargeBar;
         stats.lives = GameManager.instance.headsUpDisplay.currentLives;
+        stats.currentAmmoText = GameManager.instance.headsUpDisplay.currentAmmoInfo;
+        stats.maxAmmoText = GameManager.instance.headsUpDisplay.maxAmmoInfo;
         manageInventory();
         base.Start();
     }

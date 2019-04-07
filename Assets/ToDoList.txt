@@ -13,6 +13,7 @@ Stretch Goals:
 	? Camera Fader on walls
 	? Weapons Reload
 	? Gun screen flash
+	? Shield reaction to hits
 	*?* AI Weapon Stuff * Important needs changes, but idk what...
 
 	 ===================================================================================
@@ -34,8 +35,8 @@ Milestone 5:
 	X	Lighting
 
 Extras:
-	1 Weapons Active Ammo
 	1 Wave Spawns (Difficulty Formula)
+	Hook up shield shader to script
 	1 Credits
 
      ===================================================================================
@@ -62,6 +63,4 @@ Particles:
 	Hit wall smoke/burn/explosion
 	Muzzle Flash
 	Footstep smoke
-
-Shaders:
-	Shield Hit
+	Shield Dead

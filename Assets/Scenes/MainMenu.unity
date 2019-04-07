@@ -1355,7 +1355,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000001340736, y: 0.215689, z: -0.026496705}
+  m_ConnectedAnchor: {x: 0.0000013407359, y: 0.21568912, z: -0.026496705}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -2220,7 +2220,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.27404696, y: 0.000000417287, z: 0.00000011362132}
+  m_ConnectedAnchor: {x: -0.27404696, y: 0.0000005364963, z: 0.00000011362131}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 0, z: -1}
   m_TwistLimitSpring:
@@ -2985,7 +2985,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 905552585}
   m_LocalRotation: {x: -0, y: 0.8402146, z: -0, w: 0.5422541}
-  m_LocalPosition: {x: -1.74, y: -0.23, z: -3.19}
+  m_LocalPosition: {x: -1.74, y: -0.088, z: -3.19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 725378258}
@@ -3578,7 +3578,7 @@ SkinnedMeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: bf2e1b8abe435f14bafd860462f1568a, type: 2}
+  - {fileID: 2100000, guid: 452b33d6848512e439fa6c7bc5e5e46c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3954,7 +3954,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.18760648, y: 0.22204688, z: -0.03521791}
+  m_ConnectedAnchor: {x: 0.18760648, y: 0.222047, z: -0.03521791}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:

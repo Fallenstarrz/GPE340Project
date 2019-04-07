@@ -15,4 +15,6 @@ public class HUD : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject gameOverMenu;
     public InventorySlot[] weaponSlots = new InventorySlot[5];
+    public TextMeshProUGUI currentAmmoInfo;
+    public TextMeshProUGUI maxAmmoInfo;
 }
