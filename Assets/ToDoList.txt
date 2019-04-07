@@ -1,8 +1,8 @@
-Extras:
-	1 Weapons Active Ammo
-	1 Wave Spawns (Difficulty Formula)
-	1 Credits
+     ===================================================================================
+========================================= Do These Later ====================================
+     ===================================================================================
 
+Stretch Goals:
 	1 Slow time every random number of kills
 	1 Gun screen shake
 	1 Different Bullets
@@ -15,7 +15,14 @@ Extras:
 	? Gun screen flash
 	*?* AI Weapon Stuff * Important needs changes, but idk what...
 
+	 ===================================================================================
+========================================= Milestone Goals ===================================
+     ===================================================================================
+
 Milestone 5:
+		Audio (Triggered)
+		Audio (Background / Environmental)
+		Particle Effects
 		Runs Smoothly at 60fps
 		Build Version
 		Added To Portfolio
@@ -25,12 +32,14 @@ Milestone 5:
 	X	Save/Load Settings
 	X	Set up default settings
 	X	Lighting
-		Audio (Triggered)
-		Audio (Background / Environmental)
-		Particle Effects
+
+Extras:
+	1 Weapons Active Ammo
+	1 Wave Spawns (Difficulty Formula)
+	1 Credits
 
      ===================================================================================
-========================================= Do These Later ====================================
+======================================= Effects and Sounds ==================================
      ===================================================================================
 
 Sounds:
