@@ -107,6 +107,9 @@ public class GameManager : MonoBehaviour
         #endif
     }
 
+    /// <summary>
+    /// Returns to scene called "MainMenu"
+    /// </summary>
     public void returnToMainMenu()
     {
         sceneSwitcher.switchScene("MainMenu");

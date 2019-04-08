@@ -6,6 +6,12 @@ public class DropController : MonoBehaviour
 {
     public List<Drop> dropTable;
 
+    /// <summary>
+    /// This function looks at the drop table and picks an item
+    /// based off the weights the object has set up in the inspector.
+    /// Higher weight = more likely
+    /// </summary>
+    /// <returns>Drop gameObject from dropTable</returns>
     public GameObject GetRandomItem()
     {
         // CDF stands for Cumulative Distribution Function Array

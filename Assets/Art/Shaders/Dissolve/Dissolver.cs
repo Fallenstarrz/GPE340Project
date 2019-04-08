@@ -23,8 +23,10 @@ public class Dissolver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // stop update when paused
         if (GameManager.instance.isPaused == false)
         {
+            // dissolve the object then destroy it when it has been completely dissolved
             if (dissolveAmount <= 1.2)
             {
                 dissolveAmount += (Time.deltaTime / 2);

@@ -277,6 +277,9 @@ public class Stats : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// switch the ammo current and max displayed based on the current weapon we have equipped
+    /// </summary>
     private void ammoUIUpdate()
     {
         Debug.Log(weaponEquipped.name);

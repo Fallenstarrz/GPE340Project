@@ -7,6 +7,9 @@ public class LevelSelectSwitcher : MonoBehaviour
     public List<GameObject> UILevelDisplay;
     private int index = 0;
 
+    /// <summary>
+    /// Increase the level on the UI level switcher
+    /// </summary>
     public void incrementDisplayedLevel()
     {
         hideCurrent();
@@ -18,6 +21,9 @@ public class LevelSelectSwitcher : MonoBehaviour
         showNext();
     }
 
+    /// <summary>
+    /// Decrease the level on the UI level switcher
+    /// </summary>
     public void decrementDisplayedLevel()
     {
         hideCurrent();
@@ -29,11 +35,17 @@ public class LevelSelectSwitcher : MonoBehaviour
         showNext();
     }
 
+    /// <summary>
+    /// Toggle off the current visibility of levels
+    /// </summary>
     private void hideCurrent()
     {
         UILevelDisplay[index].SetActive(false);
     }
 
+    /// <summary>
+    /// Toggle on the visibilitiy of the next level
+    /// </summary>
     private void showNext()
     {
         UILevelDisplay[index].SetActive(true);

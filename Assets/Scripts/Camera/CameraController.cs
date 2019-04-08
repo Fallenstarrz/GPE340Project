@@ -26,6 +26,7 @@ public class CameraController : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        // stop update when paused
         if (GameManager.instance.isPaused == false)
         {
             moveCamera();

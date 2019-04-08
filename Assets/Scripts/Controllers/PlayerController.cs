@@ -165,6 +165,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Handle whether the game should be paused or not.
+    /// </summary>
     private static void pauseHandler()
     {
         if (Input.GetKeyDown(KeyCode.Escape))

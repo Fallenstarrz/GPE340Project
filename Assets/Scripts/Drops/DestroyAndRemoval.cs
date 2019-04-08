@@ -22,6 +22,10 @@ public class DestroyAndRemoval : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// begin funtion is called and used the same way a start function would, but we don't want it to run on all objects, only the ones spawned by enemies,
+    /// so we attach this to every object and run the function when the enemy dies instead
+    /// </summary>
     public void begin()
     {
         myRigidbody = GetComponent<Rigidbody>();
@@ -30,6 +34,12 @@ public class DestroyAndRemoval : MonoBehaviour
         StartCoroutine(removeComponents());
     }
 
+    /// <summary>
+    /// Coroutine!!
+    /// This function removes sets the collider to a trigger after it removes the rigidbody from the object,
+    /// this is so objects cannot be pushed around after they have landed on the ground
+    /// </summary>
+    /// <returns></returns>
     IEnumerator removeComponents()
     {
         yield return new WaitForSeconds(timeBeforeRemove);

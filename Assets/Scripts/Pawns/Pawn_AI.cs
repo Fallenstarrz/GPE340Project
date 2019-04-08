@@ -177,6 +177,11 @@ public class Pawn_AI : Pawn
         }
     }
 
+    /// <summary>
+    /// Add force to object in a random direction
+    /// This function is used for items dropped by the enemies, so they don't fall flat at their feet
+    /// </summary>
+    /// <param name="itemToPropel"></param>
     private void addForceInRandomDirection(GameObject itemToPropel)
     {
         tf.eulerAngles = new Vector3(tf.eulerAngles.x, Random.Range(0, 360), transform.eulerAngles.z);

@@ -15,6 +15,7 @@ public class Billboard : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Rotate towards world coordinate defined by myRotation
         Quaternion newRotation = Quaternion.Euler(myRotation);
         tf.rotation = newRotation;
     }

@@ -11,31 +11,45 @@ public class Settings : MonoBehaviour
     public VolumeSliderController audioController;
 
     [Header("Current Settings")]
-    public int resolution;
-    public bool fullscreen;
-    public int quality;
-    public float masterVolume;
-    public float soundFXVolume;
-    public float musicVolume;
-    public float ambientVolume;
+    private int resolution;
+    private bool fullscreen;
+    private int quality;
+    private float masterVolume;
+    private float soundFXVolume;
+    private float musicVolume;
+    private float ambientVolume;
 
     [Header("UI Elements")]
-    public TMP_Dropdown resolutionDropdown;
-    public Toggle fullScreenToggle;
-    public TMP_Dropdown qualityDropdown;
-    public Slider masterVolumeSlider;
-    public Slider soundFXVolumeSlider;
-    public Slider musicVolumeSlider;
-    public Slider ambientVolumeSlider;
+    [SerializeField]
+    private TMP_Dropdown resolutionDropdown;
+    [SerializeField]
+    private Toggle fullScreenToggle;
+    [SerializeField]
+    private TMP_Dropdown qualityDropdown;
+    [SerializeField]
+    private Slider masterVolumeSlider;
+    [SerializeField]
+    private Slider soundFXVolumeSlider;
+    [SerializeField]
+    private Slider musicVolumeSlider;
+    [SerializeField]
+    private Slider ambientVolumeSlider;
 
     [Header("Default Settings")]
-    public int default_resolution = 0;
-    public bool default_fullscreen = false;
-    public int default_quality = 0;
-    public float default_masterVolume = 1.0f;
-    public float default_soundFXVolume = 1.0f;
-    public float default_musicVolume = 1.0f;
-    public float default_ambientVolume = 1.0f;
+    [SerializeField]
+    private int default_resolution = 0;
+    [SerializeField]
+    private bool default_fullscreen = false;
+    [SerializeField]
+    private int default_quality = 0;
+    [SerializeField]
+    private float default_masterVolume = 1.0f;
+    [SerializeField]
+    private float default_soundFXVolume = 1.0f;
+    [SerializeField]
+    private float default_musicVolume = 1.0f;
+    [SerializeField]
+    private float default_ambientVolume = 1.0f;
 
     private void Start()
     {
@@ -43,6 +57,9 @@ public class Settings : MonoBehaviour
         UIElementUpdate();
     }
 
+    /// <summary>
+    /// Load settings from player prefs
+    /// </summary>
     public void loadSettings()
     {
         resolution = PlayerPrefs.GetInt("resolution");
@@ -62,6 +79,9 @@ public class Settings : MonoBehaviour
         ambientVolume = PlayerPrefs.GetFloat("ambientVolume");
     }
 
+    /// <summary>
+    /// Save settings to player prefs then update UI
+    /// </summary>
     public void saveSettings()
     {
         resolution = resolutionDropdown.value;
@@ -90,6 +110,10 @@ public class Settings : MonoBehaviour
         UIElementUpdate();
     }
 
+    /// <summary>
+    /// Reset all variables to default
+    /// then update ui
+    /// </summary>
     public void resetToDefault()
     {
         resolution = default_resolution;
@@ -103,6 +127,9 @@ public class Settings : MonoBehaviour
         UIElementUpdate();
     }
 
+    /// <summary>
+    /// Update the UI elements with information stored in this component
+    /// </summary>
     private void UIElementUpdate()
     {
         // This setting doesn't get set properly :( I have no frickin clue why...

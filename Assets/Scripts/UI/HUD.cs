@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/// <summary>
+/// Connector class used to store all HUD information
+/// </summary>
 public class HUD : MonoBehaviour
 {
     public Image healthBar;

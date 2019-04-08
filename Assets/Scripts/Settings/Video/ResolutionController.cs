@@ -8,7 +8,10 @@ public class ResolutionController : MonoBehaviour
 {
     public TMP_Dropdown resolutionDropdown;
     Resolution[] resolutions;
-    // Use this for initialization
+    
+    /// <summary>
+    /// Set resolution dropdown options depending on the system running the program
+    /// </summary>
     void Awake()
     {
         resolutions = Screen.resolutions;
@@ -33,6 +36,10 @@ public class ResolutionController : MonoBehaviour
         resolutionDropdown.RefreshShownValue();
     }
 
+    /// <summary>
+    /// Resoltion setter from dropdown UI component
+    /// </summary>
+    /// <param name="resolutionIndex"></param>
     public void setResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
