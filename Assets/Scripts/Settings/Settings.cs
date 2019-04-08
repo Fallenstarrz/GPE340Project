@@ -122,7 +122,7 @@ public class Settings : MonoBehaviour
         masterVolume = default_masterVolume;
         soundFXVolume = default_soundFXVolume;
         musicVolume = default_musicVolume;
-        ambientVolume = default_musicVolume;
+        ambientVolume = default_ambientVolume;
 
         UIElementUpdate();
     }

@@ -46,7 +46,6 @@ public abstract class Pickup : MonoBehaviour
             if (other.gameObject == GameManager.instance.spawnedPlayer)
             {
                 onPickup(other.gameObject);
-                Debug.Log("Item picked up by: " + other.gameObject);
             }
         }
     }

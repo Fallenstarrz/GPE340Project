@@ -282,31 +282,33 @@ public class Stats : MonoBehaviour
     /// </summary>
     private void ammoUIUpdate()
     {
-        Debug.Log(weaponEquipped.name);
-        if (weaponEquipped.currentWeaponType == Weapon.weaponType.machineGun)
+        if (currentAmmoText != null && maxAmmoText != null)
         {
-            currentAmmoText.text = machineGunAmmoCurrent.ToString();
-            maxAmmoText.text = machineGunAmmoMax.ToString();
-        }
-        else if (weaponEquipped.currentWeaponType == Weapon.weaponType.assaultRifle)
-        {
-            currentAmmoText.text = rifleAmmoCurrent.ToString();
-            maxAmmoText.text = rifleAmmoMax.ToString();
-        }
-        else if (weaponEquipped.currentWeaponType == Weapon.weaponType.rocketLauncher)
-        {
-            currentAmmoText.text = RocketLauncherAmmoCurrent.ToString();
-            maxAmmoText.text = RocketLauncherAmmoMax.ToString();
-        }
-        else if (weaponEquipped.currentWeaponType == Weapon.weaponType.sniperRifle)
-        {
-            currentAmmoText.text = sniperAmmoCurrent.ToString();
-            maxAmmoText.text = sniperAmmoMax.ToString();
-        }
-        else
-        {
-            currentAmmoText.text = pistolAmmoCurrent.ToString();
-            maxAmmoText.text = pistolAmmoMax.ToString();
+            if (weaponEquipped.currentWeaponType == Weapon.weaponType.machineGun)
+            {
+                currentAmmoText.text = machineGunAmmoCurrent.ToString();
+                maxAmmoText.text = machineGunAmmoMax.ToString();
+            }
+            else if (weaponEquipped.currentWeaponType == Weapon.weaponType.assaultRifle)
+            {
+                currentAmmoText.text = rifleAmmoCurrent.ToString();
+                maxAmmoText.text = rifleAmmoMax.ToString();
+            }
+            else if (weaponEquipped.currentWeaponType == Weapon.weaponType.rocketLauncher)
+            {
+                currentAmmoText.text = RocketLauncherAmmoCurrent.ToString();
+                maxAmmoText.text = RocketLauncherAmmoMax.ToString();
+            }
+            else if (weaponEquipped.currentWeaponType == Weapon.weaponType.sniperRifle)
+            {
+                currentAmmoText.text = sniperAmmoCurrent.ToString();
+                maxAmmoText.text = sniperAmmoMax.ToString();
+            }
+            else
+            {
+                currentAmmoText.text = pistolAmmoCurrent.ToString();
+                maxAmmoText.text = pistolAmmoMax.ToString();
+            } 
         }
     }
 }

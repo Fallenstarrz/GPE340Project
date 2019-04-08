@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         settings.loadSettings();
+        resetGame();
     }
 
     public void reducePlayerLives()
