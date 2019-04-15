@@ -23,7 +23,7 @@ Stretch Goals:
 Milestone 5:
 		Audio (Triggered)
 		Audio (Background / Environmental)
-		Particle Effects
+		Plug in Particle Effects
 		Runs Smoothly at 60fps
 		Build Version
 		Added To Portfolio
@@ -36,7 +36,6 @@ Milestone 5:
 
 Extras:
 	1 Wave Spawns (Difficulty Formula)
-	Hook up shield shader to script
 	1 Credits
 
      ===================================================================================
@@ -64,3 +63,5 @@ Particles:
 	Muzzle Flash
 	Footstep smoke
 	Shield Dead
+	Pickup Received
+	Pickup spawned

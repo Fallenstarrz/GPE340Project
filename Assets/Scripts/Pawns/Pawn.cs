@@ -62,7 +62,9 @@ public abstract class Pawn : MonoBehaviour
     [Tooltip("Reference Only. Set when pawn dies.")]
     public bool isDead;
     public float timeToWaitForDestroy;
-    public Dissolver dissolver;
+    private Dissolver dissolver;
+    public ShieldController shieldController;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -71,6 +73,7 @@ public abstract class Pawn : MonoBehaviour
         stats = GetComponent<Stats>();
         ragdoll = GetComponent<Ragdoll>();
         dissolver = GetComponent<Dissolver>();
+        shieldController = GetComponent<ShieldController>();
     }
     // Use this for initialization
     protected virtual void Start()

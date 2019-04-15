@@ -22,6 +22,7 @@ public class Stats : MonoBehaviour
     public float staminaRegenDelayMax;
     public Image staminaRegenFill;
     public float staminaDrainSprinting;
+    private bool shieldActive;
 
     [Header("Shields")]
     public float shieldMax;
@@ -91,8 +92,11 @@ public class Stats : MonoBehaviour
         if (GameManager.instance.isPaused == false)
         {
             // Regens
-            regenStamina();
-            regenShields();
+            if (!pawn.isDead)
+            {
+                regenStamina();
+                regenShields(); 
+            }
 
             // UI Updates
             healthUIUpdate();
@@ -142,19 +146,38 @@ public class Stats : MonoBehaviour
             shieldRegenDelayCurrent -= Time.deltaTime;
             return;
         }
-        if (shieldRegenDelayCurrent <= 0)
+        else
         {
             if (shieldCurrent >= shieldMax)
             {
+                shieldActive = true;
                 return;
             }
             else if (shieldCurrent + (shieldRegenRate * Time.deltaTime) >= shieldMax)
             {
                 shieldCurrent = shieldMax;
+                // Activate shader for shields
+                if (shieldActive == false)
+                {
+                    shieldActive = true;
+                    if (pawn.shieldController != null)
+                    {
+                        pawn.shieldController.raiseShield();  
+                    }
+                }
             }
             else
             {
                 shieldCurrent += shieldRegenRate * Time.deltaTime;
+                // Activate shader for shields
+                if (shieldActive == false)
+                {
+                    shieldActive = true;
+                    if (pawn.shieldController != null)
+                    {
+                        pawn.shieldController.raiseShield();  
+                    }
+                }
             }
         }
     }
@@ -168,11 +191,22 @@ public class Stats : MonoBehaviour
     {
         if (shieldCurrent <= 0)
         {
+            // shield shader disable
+            if (shieldActive == true)
+            {
+                shieldActive = false;
+                if (pawn.shieldController != null)
+                {
+                    pawn.shieldController.disableShield(); 
+                }
+                // explody shield particle effect here
+            }
             healthCurrent -= damageToTake;
             if (healthCurrent <= 0)
             {
                 pawn.die();
             }
+            shieldRegenDelayCurrent = shieldRegenDelayMax;
         }
         else
         {
@@ -258,16 +292,16 @@ public class Stats : MonoBehaviour
                     if (weaponEquipped.GetType() == inventory[i].GetType())
                     {
                         display.weaponSlots[0].slotImage.sprite = weaponEquipped.weaponSprite;
-                        display.weaponSlots[0].keybindNumber.text = (i+1).ToString();
+                        display.weaponSlots[0].keybindNumber.text = (i + 1).ToString();
                         display.weaponSlots[0].gameObject.SetActive(true);
                     }
                     else
                     {
                         display.weaponSlots[j].slotImage.sprite = inventory[i].weaponSprite;
-                        display.weaponSlots[j].keybindNumber.text = (i+1).ToString();
+                        display.weaponSlots[j].keybindNumber.text = (i + 1).ToString();
                         display.weaponSlots[j].gameObject.SetActive(true);
                         j++;
-                    } 
+                    }
                 }
             }
             else
@@ -308,7 +342,7 @@ public class Stats : MonoBehaviour
             {
                 currentAmmoText.text = pistolAmmoCurrent.ToString();
                 maxAmmoText.text = pistolAmmoMax.ToString();
-            } 
+            }
         }
     }
 }
