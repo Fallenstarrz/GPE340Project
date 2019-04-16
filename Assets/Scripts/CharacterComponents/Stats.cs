@@ -22,7 +22,6 @@ public class Stats : MonoBehaviour
     public float staminaRegenDelayMax;
     public Image staminaRegenFill;
     public float staminaDrainSprinting;
-    public bool shieldActive;
 
     [Header("Shields")]
     public float shieldMax;
@@ -32,6 +31,8 @@ public class Stats : MonoBehaviour
     public float shieldRegenDelayCurrent;
     public float shieldRegenDelayMax;
     public Image shieldRegenFill;
+    public bool shieldActive;
+    public GameObject shieldExplosionParticles;
 
     [Header("Lives")]
     public TextMeshProUGUI lives;
@@ -199,7 +200,7 @@ public class Stats : MonoBehaviour
                 {
                     pawn.shieldController.disableShield(); 
                 }
-                // explody shield particle effect here
+                createShieldParticles();
             }
             healthCurrent -= damageToTake;
             if (healthCurrent <= 0)
@@ -215,11 +216,10 @@ public class Stats : MonoBehaviour
         }
     }
 
-    // YOU STOPPED HERE
-    public GameObject shieldExplosionParticles;
+    // spawn shield explosion particles
     private void createShieldParticles()
     {
-        GameObject myParticles = Instantiate(shieldExplosionParticles);
+        Instantiate(shieldExplosionParticles, pawn.tf.position, pawn.tf.rotation);
     }
 
     // Update lives UI

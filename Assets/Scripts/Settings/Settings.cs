@@ -108,6 +108,7 @@ public class Settings : MonoBehaviour
         PlayerPrefs.SetFloat("ambientVolume", ambientVolume);
 
         UIElementUpdate();
+        PlayerPrefs.Save();
     }
 
     /// <summary>

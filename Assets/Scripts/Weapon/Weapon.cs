@@ -40,6 +40,9 @@ public abstract class Weapon : MonoBehaviour
     [Header("Bullet to Shoot")]
     public Projectile bulletPrefab;
 
+    [Header("Muzzle Flash")]
+    public GameObject muzzleFlash;
+
     public enum weaponType
     {
         none,
@@ -79,7 +82,8 @@ public abstract class Weapon : MonoBehaviour
     /// <param name="stats"></param>
     public virtual void Shoot(Stats stats)
     {
-        Projectile projectile = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation * Quaternion.Euler(Random.onUnitSphere * bulletSpread));
+        Instantiate(muzzleFlash, firePoint.position, Quaternion.LookRotation(firePoint.up, -firePoint.right));
+        Projectile projectile = Instantiate(bulletPrefab, firePoint.position, Quaternion.LookRotation(firePoint.up, -firePoint.right) * Quaternion.Euler(Random.onUnitSphere * bulletSpread));
         projectile.weaponThatShot = this;
     }
 

@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 478416}
   - component: {fileID: 19892850}
   - component: {fileID: 19907540}
+  - component: {fileID: 114440706239403852}
   m_Layer: 0
   m_Name: BlueFireSmallMuzzleFlash
   m_TagString: Untagged
@@ -343,7 +344,7 @@ ParticleSystem:
         m_RotationOrder: 0
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -396,7 +397,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -9312,3 +9313,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 158132}
   m_IsPrefabAsset: 1
+--- !u!114 &114440706239403852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36138d7c1e242564e9699c888c1e8089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestruction: 3

@@ -179,7 +179,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1172836635077518}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: -7.55}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4388928388890656}
@@ -309,8 +309,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.96469927, g: 1, b: 0, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 0.5
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 180
+  pickupParticles: {fileID: 185082, guid: 061fcb2fca2392e40ae941c2f9190d4e, type: 2}
   weapon: {fileID: 114490107089067034, guid: 0ff4c396eb2ff0f48881df892b719b21, type: 2}
 --- !u!114 &114308040456165700
 MonoBehaviour:

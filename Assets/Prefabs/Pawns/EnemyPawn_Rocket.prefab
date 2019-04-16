@@ -2633,6 +2633,9 @@ MonoBehaviour:
   shieldRegenDelayCurrent: 0
   shieldRegenDelayMax: 5
   shieldRegenFill: {fileID: 0}
+  shieldActive: 0
+  shieldExplosionParticles: {fileID: 169604, guid: 50f7f40acea204c4181d510fe41fa746,
+    type: 2}
   lives: {fileID: 0}
   currentAmmoText: {fileID: 0}
   maxAmmoText: {fileID: 0}

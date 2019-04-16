@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 444196}
   - component: {fileID: 19815418}
   - component: {fileID: 19901946}
+  - component: {fileID: 114892603583131026}
   m_Layer: 0
   m_Name: OrangeFireMuzzleFlash
   m_TagString: Untagged
@@ -18578,3 +18579,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146160}
   m_IsPrefabAsset: 1
+--- !u!114 &114892603583131026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36138d7c1e242564e9699c888c1e8089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestruction: 3

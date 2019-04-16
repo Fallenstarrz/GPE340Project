@@ -10,6 +10,8 @@ public abstract class Pickup : MonoBehaviour
     [Range(0,360)]
     [Tooltip("Rate at which the object spins")]
     private int rotationSpeed;
+    [SerializeField]
+    private GameObject pickupParticles;
 
 	// Use this for initialization
 	void Start ()
@@ -46,6 +48,7 @@ public abstract class Pickup : MonoBehaviour
             if (other.gameObject == GameManager.instance.spawnedPlayer)
             {
                 onPickup(other.gameObject);
+                createParticles();
             }
         }
     }
@@ -57,5 +60,11 @@ public abstract class Pickup : MonoBehaviour
     protected virtual void onPickup(GameObject instigator)
     {
         Destroy(this.gameObject);
+    }
+
+    // Create particles
+    private void createParticles()
+    {
+        Instantiate(pickupParticles , tf.position, pickupParticles.transform.rotation);
     }
 }

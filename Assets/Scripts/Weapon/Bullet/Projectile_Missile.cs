@@ -35,7 +35,7 @@ public class Projectile_Missile : Projectile
 
     protected override void createParticles(GameObject particleToSpawn)
     {
-        GameObject myParticle = Instantiate(particleToSpawn, tf.position, tf.rotation);
+        Instantiate(particleToSpawn, tf.position, tf.rotation);
         base.createParticles(particleToSpawn);
     }
 }

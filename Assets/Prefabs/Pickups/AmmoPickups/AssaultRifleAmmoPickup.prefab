@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1995942615973134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 1, z: -11.55}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4455490283210842}
@@ -309,8 +309,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.08675194, g: 1, b: 0, a: 1}
-  m_Intensity: 1
-  m_Range: 10
+  m_Intensity: 0.5
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -348,6 +348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 180
+  pickupParticles: {fileID: 103842, guid: 7a37f94409de3204a9f223f743eb3697, type: 2}
   ammoAmountToAdd: 50
   typeOfAmmo: 1
 --- !u!114 &114983132717612162

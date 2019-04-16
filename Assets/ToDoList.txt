@@ -23,10 +23,10 @@ Stretch Goals:
 Milestone 5:
 		Audio (Triggered)
 		Audio (Background / Environmental)
-		Plug in Particle Effects
 		Runs Smoothly at 60fps
 		Build Version
 		Added To Portfolio
+	X	Plug in Particle Effects
 	X	Main Menu (Still need render texture for the background scene)
 	X	Settings Menu (also at pause)
 	X	Volume Control
@@ -37,6 +37,12 @@ Milestone 5:
 Extras:
 	1 Wave Spawns (Difficulty Formula)
 	1 Credits
+	** Display "out of ammo" on gui somehow -* Red flash on ammo or something... *-
+	** Menu cleanup
+
+Bugs:
+	Bullets don't face the right direction *** Projectile Script ***
+	Handle pickups flying when shot by rocket *** Destroy and Removal Script ***
 
      ===================================================================================
 ======================================= Effects and Sounds ==================================
@@ -54,14 +60,3 @@ Sounds:
 	Scifi Ambiance
 	Footsteps
 	Robot chimes
-
-Particles:
-	Rocket Explodion
-	Hit Health
-	Hit Shield
-	Hit wall smoke/burn/explosion
-	Muzzle Flash
-	Footstep smoke
-	Shield Dead
-	Pickup Received
-	Pickup spawned

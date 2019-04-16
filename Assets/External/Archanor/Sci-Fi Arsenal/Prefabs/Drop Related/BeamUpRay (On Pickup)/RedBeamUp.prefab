@@ -78,6 +78,7 @@ GameObject:
   - component: {fileID: 475948}
   - component: {fileID: 19831012}
   - component: {fileID: 19951122}
+  - component: {fileID: 114802849492804160}
   m_Layer: 0
   m_Name: RedBeamUp
   m_TagString: Untagged
@@ -23031,3 +23032,15 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 176808}
   m_IsPrefabAsset: 1
+--- !u!114 &114802849492804160
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36138d7c1e242564e9699c888c1e8089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeBeforeDestruction: 3

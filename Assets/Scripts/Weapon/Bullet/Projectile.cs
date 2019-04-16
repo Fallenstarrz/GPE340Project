@@ -45,7 +45,7 @@ public class Projectile : MonoBehaviour
     /// </summary>
     void propelBullet()
     {
-        rb.AddRelativeForce(Vector3.right * weaponThatShot.bulletSpeed, ForceMode.VelocityChange);
+        rb.AddRelativeForce(-Vector3.forward * weaponThatShot.bulletSpeed, ForceMode.VelocityChange);
     }
 
     /// <summary>
@@ -59,7 +59,6 @@ public class Projectile : MonoBehaviour
 
     protected virtual void createParticles(GameObject particleToSpawn)
     {
-        // Destroy doesn't work because this object was destroyed!!!!
-        Destroy(particleToSpawn, 3.0f);
+
     }
 }
