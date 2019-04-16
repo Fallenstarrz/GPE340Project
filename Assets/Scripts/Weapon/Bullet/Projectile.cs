@@ -56,4 +56,10 @@ public class Projectile : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    protected virtual void createParticles(GameObject particleToSpawn)
+    {
+        // Destroy doesn't work because this object was destroyed!!!!
+        Destroy(particleToSpawn, 3.0f);
+    }
 }

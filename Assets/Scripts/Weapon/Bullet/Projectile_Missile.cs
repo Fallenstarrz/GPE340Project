@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Projectile_Missile : Projectile
 {
+    public GameObject myParticleToCreate;
+
     /// <summary>
     /// Override function for collisions
     /// Handles what happens when a missile collides with an object
@@ -12,6 +14,7 @@ public class Projectile_Missile : Projectile
     protected override void OnTriggerEnter(Collider other)
     {
         Collider[] hitColliders = Physics.OverlapSphere(tf.position, weaponThatShot.explosionRadius);
+        createParticles(myParticleToCreate);
         foreach (Collider hit in hitColliders)
         {
             // if actor hit has Stats make them take damage
@@ -28,5 +31,11 @@ public class Projectile_Missile : Projectile
             }
         }
         base.OnTriggerEnter(other);
+    }
+
+    protected override void createParticles(GameObject particleToSpawn)
+    {
+        GameObject myParticle = Instantiate(particleToSpawn, tf.position, tf.rotation);
+        base.createParticles(particleToSpawn);
     }
 }

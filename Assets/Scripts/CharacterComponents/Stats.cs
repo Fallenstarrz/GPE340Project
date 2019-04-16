@@ -22,7 +22,7 @@ public class Stats : MonoBehaviour
     public float staminaRegenDelayMax;
     public Image staminaRegenFill;
     public float staminaDrainSprinting;
-    private bool shieldActive;
+    public bool shieldActive;
 
     [Header("Shields")]
     public float shieldMax;
@@ -213,6 +213,13 @@ public class Stats : MonoBehaviour
             shieldCurrent -= damageToTake;
             shieldRegenDelayCurrent = shieldRegenDelayMax;
         }
+    }
+
+    // YOU STOPPED HERE
+    public GameObject shieldExplosionParticles;
+    private void createShieldParticles()
+    {
+        GameObject myParticles = Instantiate(shieldExplosionParticles);
     }
 
     // Update lives UI

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Projectile_Bullet : Projectile
 {
+    public GameObject shieldHitParticle;
+    public GameObject lifeHitParticle;
+    public GameObject wallHitParticle;
     /// <summary>
     /// check to see if the collidion that has occured is with an object that has stats
     /// if it does deal damage to that object
@@ -16,6 +19,14 @@ public class Projectile_Bullet : Projectile
         if (other.gameObject.GetComponent<Stats>() != null)
         {
             other.gameObject.GetComponent<Stats>().takeDamage(weaponThatShot.damage);
+            if (other.gameObject.GetComponent<Stats>().shieldActive == true)
+            {
+                createParticles(shieldHitParticle);
+            }
+            else
+            {
+                createParticles(lifeHitParticle);
+            }
             if (weaponThatShot.stopOnCollision == true)
             {
                 base.OnTriggerEnter(other);
@@ -23,7 +34,14 @@ public class Projectile_Bullet : Projectile
         }
         else
         {
+            createParticles(wallHitParticle);
             base.OnTriggerEnter(other);
         }
+    }
+
+    protected override void createParticles(GameObject particleToSpawn)
+    {
+        GameObject myParticle = Instantiate(particleToSpawn, tf.position, tf.rotation);
+        base.createParticles(particleToSpawn);
     }
 }
