@@ -9,6 +9,8 @@ public class Settings : MonoBehaviour
 {
     [Header("Resources")]
     public VolumeSliderController audioController;
+    [SerializeField]
+    private AudioMixer mixer;
 
     [Header("Current Settings")]
     private int resolution;
@@ -77,6 +79,15 @@ public class Settings : MonoBehaviour
         soundFXVolume = PlayerPrefs.GetFloat("soundFXVolume");
         musicVolume = PlayerPrefs.GetFloat("musicVolume");
         ambientVolume = PlayerPrefs.GetFloat("ambientVolume");
+
+        Screen.fullScreen = fullscreen;
+        QualitySettings.SetQualityLevel(quality);
+        Resolution[] resolutions = Screen.resolutions;
+        Screen.SetResolution(resolutions[resolution].width, resolutions[resolution].height, Screen.fullScreen);
+        mixer.SetFloat("MasterVolume", Mathf.Log10(masterVolume) * 20);
+        mixer.SetFloat("SFXVolume", Mathf.Log10(soundFXVolume) * 20);
+        mixer.SetFloat("MusicVolume", Mathf.Log10(musicVolume) * 20);
+        mixer.SetFloat("AmbienceVolume", Mathf.Log10(ambientVolume) * 20);
     }
 
     /// <summary>

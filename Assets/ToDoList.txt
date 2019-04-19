@@ -21,11 +21,11 @@ Stretch Goals:
      ===================================================================================
 
 Milestone 5:
-		Audio (Triggered)
-		Audio (Background / Environmental)
 		Runs Smoothly at 60fps
 		Build Version
 		Added To Portfolio
+	X	Audio (Triggered)
+	X	Audio (Background / Environmental)
 	X	Plug in Particle Effects
 	X	Main Menu (Still need render texture for the background scene)
 	X	Settings Menu (also at pause)
@@ -53,7 +53,6 @@ Sounds:
 	Hit Shield
 	Hit Health
 	Shoot Bullet
-	Shoot Flamethrower
 	Shoot Rocket
 	Explosion
 	Music

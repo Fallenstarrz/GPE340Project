@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4388426374815808}
   - component: {fileID: 198950615505456398}
   - component: {fileID: 199157696213747098}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T4GreenLootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4944592348551996}
   - component: {fileID: 198356543371296830}
   - component: {fileID: 199534443918879400}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4854556093668190}
   - component: {fileID: 108280425340907474}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 23128305807965148}
   - component: {fileID: 95772202340483312}
   - component: {fileID: 65439431300626358}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 4170570825488374}
   - component: {fileID: 198936675520332330}
   - component: {fileID: 199042837428732030}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 65310307887831046}
   - component: {fileID: 54521299652655128}
   - component: {fileID: 114983132717612162}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AssaultRifleAmmoPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}

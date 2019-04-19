@@ -22,14 +22,19 @@ public class ShieldController : MonoBehaviour
         StartCoroutine("growShield");
     }
 
+    /// <summary>
+    /// Function to call coroutine from other functions
+    /// </summary>
     public void raiseShield()
     {
         StartCoroutine("growShield");
     }
 
+    /// <summary>
+    /// Set shield fill amount to -1 (completely invisible)
+    /// </summary>
     public void disableShield()
     {
-        Debug.Log("Shield Disabled");
         fillAmount = -1;
         shieldMaterial[0].SetFloat("_StepValue", fillAmount);
         if (isGrowShieldRunning)
@@ -38,6 +43,11 @@ public class ShieldController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine
+    /// Increase shield shader property for fillAmount, so the shield crawls up the body of the user
+    /// </summary>
+    /// <returns></returns>
     IEnumerator growShield()
     {
         isGrowShieldRunning = true;

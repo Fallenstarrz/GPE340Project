@@ -29,15 +29,6 @@ public class Projectile : MonoBehaviour
 
         tf.rotation = Quaternion.Euler(0, tf.rotation.y, tf.rotation.z);
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (GameManager.instance.isPaused == false)
-        {
-
-        }
-	}
 
     /// <summary>
     /// Add force to the bullet propeling it forward

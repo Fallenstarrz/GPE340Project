@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4574020575469302}
   - component: {fileID: 198740011525032174}
   - component: {fileID: 199195567501955400}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 65605799204364988}
   - component: {fileID: 54376378599032318}
   - component: {fileID: 114866707108683018}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: StaminaRatePickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 23067845190746654}
   - component: {fileID: 95311321042429380}
   - component: {fileID: 65899064754133452}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 4562399109982746}
   - component: {fileID: 198114946446311384}
   - component: {fileID: 199738463793541352}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T3YellowLootitem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4233640336756250}
   - component: {fileID: 108764209315143046}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4687594405311816}
   - component: {fileID: 198201544375464350}
   - component: {fileID: 199159137715797076}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}

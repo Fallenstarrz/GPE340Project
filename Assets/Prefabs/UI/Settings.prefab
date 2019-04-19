@@ -2444,13 +2444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioController: {fileID: 114769983442199046}
-  resolution: 0
-  fullscreen: 0
-  quality: 0
-  masterVolume: 0
-  soundFXVolume: 0
-  musicVolume: 0
-  ambientVolume: 0
+  mixer: {fileID: 24100000, guid: 034a047a7951abc4c9c50857c011f3c5, type: 2}
   resolutionDropdown: {fileID: 114506125880188736}
   fullScreenToggle: {fileID: 114819620362512506}
   qualityDropdown: {fileID: 114193578988284862}

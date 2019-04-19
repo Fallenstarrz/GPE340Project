@@ -7,7 +7,7 @@ public class ActorSpawner_Player : ActorSpawner
     /// <summary>
     /// if a player is not currently spawned, then spawn one
     /// </summary>
-    protected override void spawnActor()
+    public override void spawnActor()
     {
         GameManager.instance.gameOver();
         if (GameManager.instance.isGameOver == false && GameManager.instance.spawnedPlayer == null)

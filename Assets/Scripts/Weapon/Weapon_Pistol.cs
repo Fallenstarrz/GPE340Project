@@ -27,10 +27,6 @@ public class Weapon_Pistol : Weapon
                 shootCooldownCurrent = shootCooldownMax;
                 base.Shoot(stats);
             }
-            else
-            {
-                Debug.Log("Out Of Ammo For " + currentWeaponType);
-            }
         }
     }
 

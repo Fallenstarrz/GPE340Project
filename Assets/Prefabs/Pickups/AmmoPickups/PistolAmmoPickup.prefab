@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4604980396729140}
   - component: {fileID: 198240193663815900}
   - component: {fileID: 199881207660693858}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4129589878280808}
   - component: {fileID: 108951085348222188}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 23208284070111238}
   - component: {fileID: 95291637826024140}
   - component: {fileID: 65180069567569352}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - component: {fileID: 4141481975474110}
   - component: {fileID: 198314985334187460}
   - component: {fileID: 199831799292793248}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T2BlueLootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 65429433201814722}
   - component: {fileID: 54448587920213708}
   - component: {fileID: 114520119886541828}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: PistolAmmoPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4039019228358802}
   - component: {fileID: 198378587195384984}
   - component: {fileID: 199245067230609400}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}

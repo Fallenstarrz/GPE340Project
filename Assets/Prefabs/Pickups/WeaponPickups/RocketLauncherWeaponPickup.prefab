@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65474889846912688}
   - component: {fileID: 54774189864401406}
   - component: {fileID: 114834939196150742}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RocketLauncherWeaponPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4231812879353206}
   - component: {fileID: 108879580060280364}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 23732670383488640}
   - component: {fileID: 95052093796913466}
   - component: {fileID: 65671931307094708}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4323342552177812}
   - component: {fileID: 198538226839806266}
   - component: {fileID: 199137153430332724}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4741956222060896}
   - component: {fileID: 198306912868544392}
   - component: {fileID: 199933047363425476}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4248910340796006}
   - component: {fileID: 198155755861416670}
   - component: {fileID: 199871166790907162}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T7RedLootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

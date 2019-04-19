@@ -28,10 +28,6 @@ public class Weapon_SniperRifle : Weapon
                 shootCooldownCurrent = shootCooldownMax;
                 base.Shoot(stats);
             }
-            else
-            {
-                Debug.Log("Out Of Ammo For " + currentWeaponType);
-            }
         }
     }
 

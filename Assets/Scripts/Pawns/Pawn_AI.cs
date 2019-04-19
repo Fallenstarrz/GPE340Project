@@ -31,6 +31,7 @@ public class Pawn_AI : Pawn
     {
         agent = GetComponent<NavMeshAgent>();
         dropController = GetComponent<DropController>();
+        GameManager.instance.enemySpawned.Add(this);
         base.Start();
     }
 
@@ -157,10 +158,14 @@ public class Pawn_AI : Pawn
     {
         GameManager.instance.currentEnemiesSpawned--;
         dropItem();
+        GameManager.instance.checkNewWave();
+        GameManager.instance.enemySpawned.Remove(this);
         base.die();
     }
 
-    // Need to destroy after an amount of time. Also need to remove rigidbody and stop them from intercepting bullets
+    /// <summary>
+    /// Drop a random item from the drop table
+    /// </summary>
     private void dropItem()
     {
         int randNum = Random.Range(1, numItemsToDrop);

@@ -26,10 +26,6 @@ public class Weapon_RocketLauncher : Weapon
                 shootCooldownCurrent = shootCooldownMax;
                 base.Shoot(stats);
             }
-            else
-            {
-                Debug.Log("Out Of Ammo For " + currentWeaponType);
-            }
         }
     }
 

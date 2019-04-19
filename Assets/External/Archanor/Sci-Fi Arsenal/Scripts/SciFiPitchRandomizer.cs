@@ -4,6 +4,9 @@ using System.Collections;
 namespace SciFiArsenal
 {
 
+    /// <summary>
+    /// set pitch to random percent
+    /// </summary>
 	public class SciFiPitchRandomizer : MonoBehaviour
 	{
 	

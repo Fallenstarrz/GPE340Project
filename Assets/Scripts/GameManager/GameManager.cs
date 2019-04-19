@@ -6,12 +6,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int waveNumber;
+    public int enemiesPerWave;
     public int currentEnemiesSpawned;
+    public List<Pawn_AI> enemySpawned = new List<Pawn_AI>();
+    public List<ActorSpawner_Enemy> enemySpawners;
     public int maxEnemiesSpawned;
 
     public int playerLivesCurrent;
     public int playerLivesMax;
     public GameObject spawnedPlayer;
+    public ActorSpawner_Player playerSpawner;
     public HUD headsUpDisplay;
 
     public bool isGameOver;
@@ -33,7 +37,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
-        } 
+        }
         #endregion
     }
 
@@ -41,9 +45,20 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         settings.loadSettings();
-        resetGame();
+        //resetGame();
     }
 
+    /// <summary>
+    /// update, only used to simplify spawning the player
+    /// </summary>
+    private void Update()
+    {
+        spawnNewPlayer();
+    }
+
+    /// <summary>
+    /// reduce player lives by 1
+    /// </summary>
     public void reducePlayerLives()
     {
         playerLivesCurrent--;
@@ -66,15 +81,36 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void resetGame()
     {
-        headsUpDisplay.gameOverMenu.SetActive(false);
-        headsUpDisplay.pauseMenu.SetActive(false);
-        Destroy(spawnedPlayer);
+        if (headsUpDisplay != null)
+        {
+            headsUpDisplay.gameOverMenu.SetActive(false);
+            headsUpDisplay.pauseMenu.SetActive(false);
+        }
+        if (spawnedPlayer != null)
+        {
+            Destroy(spawnedPlayer);
+        }
         waveNumber = 0;
         currentEnemiesSpawned = 0;
         maxEnemiesSpawned = 3;
         playerLivesCurrent = playerLivesMax;
         isGameOver = false;
         isPaused = false;
+        clearWave();
+        spawnNewPlayer();
+        enemySpawned.Clear();
+        checkNewWave();
+    }
+
+    /// <summary>
+    /// Destroy all currently spawned enemy pawns
+    /// </summary>
+    public void clearWave()
+    {
+        foreach (var pawn in enemySpawned)
+        {
+            Destroy(pawn.gameObject);
+        }
     }
 
     /// <summary>
@@ -102,10 +138,6 @@ public class GameManager : MonoBehaviour
     public void exitApplication()
     {
         Application.Quit();
-        // TODO: On Build Remove This Code
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #endif
     }
 
     /// <summary>
@@ -115,5 +147,39 @@ public class GameManager : MonoBehaviour
     {
         sceneSwitcher.switchScene("MainMenu");
     }
-}
 
+    /// <summary>
+    /// check to see if we need to spawn a new wave
+    /// </summary>
+    public void checkNewWave()
+    {
+        if (enemySpawned.Count - 1 <= 0)
+        {
+            spawnNewWave();
+        }
+    }
+
+    // spawn a new wave of enemies
+    public void spawnNewWave()
+    {
+        waveNumber++;
+        maxEnemiesSpawned += (enemiesPerWave * waveNumber);
+        enemySpawned.Clear();
+        if (enemySpawners.Count-1 >= 0)
+        {
+            for (int i = 0; i < maxEnemiesSpawned; i++)
+            {
+                enemySpawners[Random.Range(0, enemySpawners.Count - 1)].spawnActor();
+            } 
+        }
+    }
+
+    // spawn a new player
+    public void spawnNewPlayer()
+    {
+        if (playerSpawner != null)
+        {
+            playerSpawner.spawnActor();
+        }
+    }
+}

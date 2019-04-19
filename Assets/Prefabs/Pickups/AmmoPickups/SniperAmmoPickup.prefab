@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4098738977114114}
   - component: {fileID: 198128427865370430}
   - component: {fileID: 199453375971982344}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4417176527623206}
   - component: {fileID: 198762988438282846}
   - component: {fileID: 199595731855290454}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 65893794827930084}
   - component: {fileID: 54430182006719306}
   - component: {fileID: 114215056969712266}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: SniperAmmoPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 23112318518586732}
   - component: {fileID: 95199195938917116}
   - component: {fileID: 65065329550523174}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4505279309983044}
   - component: {fileID: 108657789371184746}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4657131618238456}
   - component: {fileID: 198240421216536950}
   - component: {fileID: 199548115179430312}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T5PurpleLootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}

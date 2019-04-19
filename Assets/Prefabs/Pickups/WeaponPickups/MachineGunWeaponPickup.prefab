@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114052041525646234}
   - component: {fileID: 54019425271710806}
   - component: {fileID: 114308040456165700}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: MachineGunWeaponPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4156466527627842}
   - component: {fileID: 198120480469495212}
   - component: {fileID: 199680249499672328}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T3YellowLootitem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 4874687893218000}
   - component: {fileID: 198838954157787710}
   - component: {fileID: 199819851986476300}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4568447328229760}
   - component: {fileID: 108008153408106562}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 23649325606988874}
   - component: {fileID: 95341206118341380}
   - component: {fileID: 65783662840273840}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   - component: {fileID: 4635465554556500}
   - component: {fileID: 198799930349901896}
   - component: {fileID: 199687857885705100}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}

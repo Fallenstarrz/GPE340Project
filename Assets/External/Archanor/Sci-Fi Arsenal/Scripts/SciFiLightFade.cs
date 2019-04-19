@@ -24,6 +24,9 @@ namespace SciFiArsenal
                 print("No light object found on " + gameObject.name);
         }
  
+        /// <summary>
+        /// make light component pulse
+        /// </summary>
         // Update is called once per frame
         void Update()
         {

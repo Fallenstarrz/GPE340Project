@@ -33,6 +33,10 @@ public class Projectile_Missile : Projectile
         base.OnTriggerEnter(other);
     }
 
+    /// <summary>
+    /// spawn particle effect
+    /// </summary>
+    /// <param name="particleToSpawn"></param>
     protected override void createParticles(GameObject particleToSpawn)
     {
         Instantiate(particleToSpawn, tf.position, tf.rotation);

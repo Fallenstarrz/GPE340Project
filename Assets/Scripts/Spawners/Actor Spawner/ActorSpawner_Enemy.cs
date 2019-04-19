@@ -7,13 +7,13 @@ public class ActorSpawner_Enemy : ActorSpawner
     /// <summary>
     /// if currently spawned enemies are fewer than max spawnable enemies then spawn an enemy and ++ our currently spawned enemies
     /// </summary>
-    protected override void spawnActor()
+    public override void spawnActor()
     {
-        if (GameManager.instance.currentEnemiesSpawned < GameManager.instance.maxEnemiesSpawned)
-        {
+        //if (GameManager.instance.currentEnemiesSpawned < GameManager.instance.maxEnemiesSpawned)
+        //{
             GameManager.instance.currentEnemiesSpawned++;
             base.spawnActor();
-        }
+        //}
     }
 
     /// <summary>

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114877026247233144}
   - component: {fileID: 54747885212207274}
   - component: {fileID: 114695362211723866}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: ShieldRegenPickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 23734923159687582}
   - component: {fileID: 95112200203590708}
   - component: {fileID: 65361656665175826}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4930683553640328}
   - component: {fileID: 198573215267080258}
   - component: {fileID: 199407585244902938}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 4164132204059452}
   - component: {fileID: 198144615688352382}
   - component: {fileID: 199285178318866532}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4442244513646874}
   - component: {fileID: 198374278795351500}
   - component: {fileID: 199155503051970610}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T2BlueLootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4703098502034344}
   - component: {fileID: 108869929501569548}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

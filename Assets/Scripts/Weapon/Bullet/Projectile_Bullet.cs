@@ -16,29 +16,36 @@ public class Projectile_Bullet : Projectile
     /// <param name="collision"></param>
     protected override void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Stats>() != null)
+        if (other.gameObject.GetComponent<Pickup>() == null)
         {
-            other.gameObject.GetComponent<Stats>().takeDamage(weaponThatShot.damage);
-            if (other.gameObject.GetComponent<Stats>().shieldActive == true)
+            if (other.gameObject.GetComponent<Stats>() != null)
             {
-                createParticles(shieldHitParticle);
+                other.gameObject.GetComponent<Stats>().takeDamage(weaponThatShot.damage);
+                if (other.gameObject.GetComponent<Stats>().shieldActive == true)
+                {
+                    createParticles(shieldHitParticle);
+                }
+                else
+                {
+                    createParticles(lifeHitParticle);
+                }
+                if (weaponThatShot.stopOnCollision == true)
+                {
+                    base.OnTriggerEnter(other);
+                }
             }
             else
             {
-                createParticles(lifeHitParticle);
-            }
-            if (weaponThatShot.stopOnCollision == true)
-            {
+                createParticles(wallHitParticle);
                 base.OnTriggerEnter(other);
-            }
-        }
-        else
-        {
-            createParticles(wallHitParticle);
-            base.OnTriggerEnter(other);
+            } 
         }
     }
 
+    /// <summary>
+    /// Create particle effect
+    /// </summary>
+    /// <param name="particleToSpawn"></param>
     protected override void createParticles(GameObject particleToSpawn)
     {
         Instantiate(particleToSpawn, tf.position, tf.rotation);

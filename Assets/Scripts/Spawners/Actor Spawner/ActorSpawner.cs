@@ -13,22 +13,13 @@ public class ActorSpawner : MonoBehaviour
     void Start()
     {
         tf = GetComponent<Transform>();
-        InvokeRepeating("spawnActor", 0.0f, spawnRate);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (GameManager.instance.isPaused == false)
-        {
-
-        }
+        //InvokeRepeating("spawnActor", 1.0f, spawnRate);
     }
 
     /// <summary>
     /// spawn an actor at random from our list
     /// </summary>
-    protected virtual void spawnActor()
+    public virtual void spawnActor()
     {
         GameObject newObject;
         int objectToSpawn = Random.Range(0, actorToSpawn.Count);

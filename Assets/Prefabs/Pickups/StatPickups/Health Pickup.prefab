@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4299350139547616}
   - component: {fileID: 198560514797548242}
   - component: {fileID: 199683554108331450}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4160330402776340}
   - component: {fileID: 198294459086244374}
   - component: {fileID: 199748810579778190}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: T7RedLootItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 23607408931764556}
   - component: {fileID: 95815520358680124}
   - component: {fileID: 65921879951399652}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 65464812618460928}
   - component: {fileID: 54125173844994952}
   - component: {fileID: 114466409594146764}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Health Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 4882250326386220}
   - component: {fileID: 198749154651435284}
   - component: {fileID: 199427479006571966}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Stars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,7 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4536030574664202}
   - component: {fileID: 108752315591743944}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
