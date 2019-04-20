@@ -4770,6 +4770,16 @@ Prefab:
       propertyPath: settings
       value: 
       objectReference: {fileID: 1928552713}
+    - target: {fileID: 114297701919914342, guid: 18d82e2cad59f5749a51162e0af40096,
+        type: 2}
+      propertyPath: maxEnemiesSpawned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114297701919914342, guid: 18d82e2cad59f5749a51162e0af40096,
+        type: 2}
+      propertyPath: enemiesPerWave
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18d82e2cad59f5749a51162e0af40096, type: 2}
   m_IsPrefabAsset: 0
